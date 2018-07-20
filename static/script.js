@@ -26,4 +26,4 @@ console.log('hey hi hello')
 
   // somehow reformat this so it corresponds with the charity navigator api
   // jQuery.get(giphy_url, resultCallback)
-}
+//}
