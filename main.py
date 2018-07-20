@@ -13,6 +13,9 @@ jinja_env = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+class MainPageHandler(webapp2.RequestHandler):
+    def get(self):
+        return 15
 class SearchHandler(webapp2.RequestHandler):
     #have a get and post function
 class ResultsHandler(webapp2.RequestHandler):
@@ -30,6 +33,7 @@ class AboutUsHandler(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
+    ('/', MainPageHandler),
     ('/search', SearchHandler),
     ('/results', ResultsHandler),
     ('/details', DetailsHandler),
