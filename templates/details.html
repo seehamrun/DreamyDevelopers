@@ -7,27 +7,19 @@
     <a href="static/search.html">Search for Charities</a>
     <h1>Charity Name:</h1>
     <div>
-      <h3 id="star_rating">Star Rating:</h3>
-      <h3 id="deductibility">Deductibility:</h3>
+      <h3>Star Rating:</h3>
+      <h3>Deductibility:</h3>
     </div>
     <div>
-      <h2 id="charity_cause">Charity Cause:</h2>
+      <h2>Charity Cause:</h2>
       <p></p>
     </div>
     <div>
-      <h2 id="news">News</h2>
+      <h2>News</h2>
       <p></p>
     </div>
     <div>
       <h4>Social Media:</h4>
     </div>
-
-    {% for charity in allCharities %}
-      <h1>{{charity.name}}</h1>
-      <h3 id="star_rating">{{charity.rating}}</h3>
-      <h3 id="deductibility">{{charity.deductibility}}</h3>
-      <h2 id="charity_cause">{{charity.cause}}</h2>
-      <h3 id="news">{{charity.news}}</h3>
-    {% endfor %}
   </body>
  </html>
