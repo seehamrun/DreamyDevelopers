@@ -1,7 +1,7 @@
 var api_key = "75f35a7eec548de064e93a2cdbf3d29d"
 
-<<<<<<< HEAD
-function queryGiphy(query, resultCallback) {
+
+function queryCharity(query, resultCallback) {
   var charity_url = "https://api.data.charitynavigator.org/v2"
                   + "api_key=" + api_key
                   + "&q=" + query
@@ -9,9 +9,7 @@ function queryGiphy(query, resultCallback) {
   jQuery.get(charity_url, resultCallback)
 }
 
-
-=======
->>>>>>> 6249b75224aa4c1ed71200008b9e3868c989a402
+console.log(queryCharity("hunger"))
 
 
 // Application ID
@@ -19,11 +17,11 @@ function queryGiphy(query, resultCallback) {
 // Value: 71c6533f
 
 
-function queryCharity(query, resultCallback) {
-  var charity_url = "http://api.giphy.com/v1/gifs/search?"
-                  + "api_key=" + api_key
-                  + "&q=" + query
-                  + "&limit=" + 1
+// function queryCharity(query, resultCallback) {
+//   var charity_url = "http://api.giphy.com/v1/gifs/search?"
+//                   + "api_key=" + api_key
+//                   + "&q=" + query
+//                   + "&limit=" + 1
 
   // somehow reformat this so it corresponds with the charity navigator api
   // jQuery.get(giphy_url, resultCallback)

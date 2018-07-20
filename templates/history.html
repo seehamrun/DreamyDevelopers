@@ -11,8 +11,19 @@
     <div>Amount Donated: <input type="text" name="amountDonated"></div>
     <div>Date of Donation: <input type="text" name="dateDonation"></div>
     <input type="submit">
-  </form>
+        </form>
+
         <table>
+          <tr>
+            <td>Charity</td>
+            <td>Amount Donated</td>
+            <td>Date of Donation</td>
+          </tr>
+            <td>{{userCharity}}</td>
+            <td>{{userAmount}}</td>
+            <td>{{userDonationDate}}</td>
+          <tr>
+          </tr>
         </table>
   </body>
 </html>
