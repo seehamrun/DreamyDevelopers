@@ -10,10 +10,10 @@
             <div>Charity: <input type="text" name="searchQuery"></div>
             <input type="submit">
         </form>
-        <div id="resultsBox">
-            {{charityName}}
-            {{starRating}}
-            {{deductibility}}
+        <div id="resultsBoxWrapper">
+            <div id="charity"> {{charityName}} </div>
+            <div id="rating">{{starRating}}</div>
+            <div id="deductibility">{{deductibility}}</div>
         </div>
       </body>
 </html>
