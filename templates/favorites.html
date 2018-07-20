@@ -13,15 +13,8 @@
         <td>Star Rating</td>
         <td>Deductibility</td>
         <td>Delete</td>
+        <td><a href="/delete_charity?charity_id={{charity.key.urlsafe()}}">Delete</a></td>
       </tr>
-      {% for charity in allCharities %}
-        <tr>
-          <td>{{charity.name}}</td>
-          <td>{{charity.star_rating}}</td>
-          <td>{{charity.deductibility}}</td>
-          <td><a href="/delete_charity?dog_id={{charity.key.urlsafe()}}">Delete</a></td>
-        </tr>
-      {% endfor %}
     </table>
   </body>
 </html>
