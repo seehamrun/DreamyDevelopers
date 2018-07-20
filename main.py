@@ -2,9 +2,9 @@ import webapp2
 import logging
 import jinja2
 import os
-import database
+#import database
 
-from google.appengine.ext import users
+from google.appengine.api import users
 from google.appengine.ext import ndb
 
 
@@ -34,10 +34,10 @@ class MainPageHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainPageHandler),
-    ('/search', SearchHandler),
-    ('/results', ResultsHandler),
-    ('/details', DetailsHandler),
-    ('/history', DonationHistoryHandler),
-    ('/favorites', FavCharityHandler),
-    ('/aboutus', AboutUsHandler)
+    # ('/search', SearchHandler),
+    # ('/results', ResultsHandler),
+    # ('/details', DetailsHandler),
+    # ('/history', DonationHistoryHandler),
+    # ('/favorites', FavCharityHandler),
+    # ('/aboutus', AboutUsHandler)
 ], debug=True)
