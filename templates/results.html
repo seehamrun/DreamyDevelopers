@@ -8,12 +8,14 @@
   <body>
         <form method="post">
             <div>Charity: <input type="text" name="searchQuery"></div>
-            <input type="submit">
+            <input type="submit" value="Search">
         </form>
-        <div id="resultsBox">
-            {{charityName}}
-            {{starRating}}
-            {{deductibility}}
+        {% for charity in allCharities %}
+        <div id="resultsBoxWrapper">
+            <div id="charity"> {{charityName}} </div>
+            <div id="rating">{{starRating}}</div>
+            <div id="deductibility">{{deductibility}}</div>
         </div>
+        {% endfor %}
       </body>
 </html>
