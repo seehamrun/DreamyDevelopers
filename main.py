@@ -16,17 +16,17 @@ jinja_env = jinja2.Environment(
 class MainPageHandler(webapp2.RequestHandler):
     def get(self):
         return 15
-class SearchHandler(webapp2.RequestHandler):
-    #have a get and post function
-class ResultsHandler(webapp2.RequestHandler):
-    #have a get function
-class DetailsHandler(webapp2.RequestHandler):
-    #get function
-class DonationHistoryHandler(webapp2.RequestHandler):
-    #get function
-class FavCharityHandler(webapp2.RequestHandler):
-    #get function
-class AboutUsHandler(webapp2.RequestHandler):
+# class SearchHandler(webapp2.RequestHandler):
+#     #have a get and post function
+# class ResultsHandler(webapp2.RequestHandler):
+#     #have a get function
+# class DetailsHandler(webapp2.RequestHandler):
+#     #get function
+# class DonationHistoryHandler(webapp2.RequestHandler):
+#     #get function
+# class FavCharityHandler(webapp2.RequestHandler):
+#     #get function
+# class AboutUsHandler(webapp2.RequestHandler):
     #get function
 
 
