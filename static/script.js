@@ -17,6 +17,12 @@ console.log(queryCharity("hunger"))
 // Value: 71c6533f
 
 
+// function queryCharity(query, resultCallback) {
+//   var charity_url = "http://api.giphy.com/v1/gifs/search?"
+//                   + "api_key=" + api_key
+//                   + "&q=" + query
+//                   + "&limit=" + 1
+
   // somehow reformat this so it corresponds with the charity navigator api
   // jQuery.get(giphy_url, resultCallback)
 }
