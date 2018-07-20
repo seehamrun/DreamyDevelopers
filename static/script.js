@@ -10,6 +10,7 @@ function queryCharity(query, resultCallback) {
 }
 
 console.log(queryCharity("hunger"))
+console.log('hey hi hello')
 
 
 // Application ID
