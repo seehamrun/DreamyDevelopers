@@ -16,7 +16,7 @@ jinja_env = jinja2.Environment(
 class MainPageHandler(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
-        response_html = jinja_env.get_template('templates/index.html')
+        response_html = jinja_env.get_template('templates/search.html')
         self.response.write(response_html.render())
 
 class DetailsHandler(webapp2.RequestHandler):
@@ -43,11 +43,11 @@ class AboutUsHandler(webapp2.RequestHandler):
         response_html = jinja_env.get_template('templates/aboutus.html')
         self.response.write(response_html.render())
 
-class SearchHandler(webapp2.RequestHandler):
-    def get (self):
-        self.response.headers['Content-Type'] = 'text/html'
-        response_html = jinja_env.get_template('templates/search.html')
-        self.response.write(response_html.render())
+# class SearchHandler(webapp2.RequestHandler):
+#     def get (self):
+#         self.response.headers['Content-Type'] = 'text/html'
+#         response_html = jinja_env.get_template('templates/search.html')
+#         self.response.write(response_html.render())
 
 class ResultsHandler(webapp2.RequestHandler):
     def get (self):
@@ -58,7 +58,7 @@ class ResultsHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainPageHandler),
-    ('/search', SearchHandler),
+    #('/search', SearchHandler),
     ('/results', ResultsHandler),
     ('/details', DetailsHandler),
     ('/history', DonationHistoryHandler),
