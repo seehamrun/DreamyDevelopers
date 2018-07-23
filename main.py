@@ -22,8 +22,11 @@ class MainPageHandler(webapp2.RequestHandler):
 #     #have a get and post function
 # class ResultsHandler(webapp2.RequestHandler):
 #     #have a get function
-# class DetailsHandler(webapp2.RequestHandler):
-#     #get function
+class DetailsHandler(webapp2.RequestHandler):
+    def get(self):
+        self.response.headers['Content-Type'] = 'text/html'
+        response_html = jinja_env.get_template('templates/details.html')
+        self.response.write(response_html.render())
 # class DonationHistoryHandler(webapp2.RequestHandler):
 #     #get function
 # class FavCharityHandler(webapp2.RequestHandler):
@@ -57,7 +60,7 @@ app = webapp2.WSGIApplication([
     ('/', MainPageHandler),
     ('/search', SearchHandler),
     ('/results', ResultsHandler),
-    # ('/details', DetailsHandler),
+    ('/details', DetailsHandler),
     ('/history', DonationHistoryHandler),
     # ('/favorites', FavCharityHandler),
     ('/aboutus', AboutUsHandler)
