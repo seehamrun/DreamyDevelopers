@@ -9,7 +9,19 @@ var missionStatement = ""
 var charityName = ""
 var irsClassification = ""
 
-queryCharity("hunger", function(data) {
-  console.log(data);
-  console.log('hey hi hello')
-});
+function submitClick() {
+  var inputBox = document.querySelector('#searchBar')
+  var userInput = inputBox.value
+  queryCharity("hunger", function(data) {
+    console.log(data);
+    console.log('hey hi hello');
+  });
+}
+
+
+
+
+
+
+
+  // document.querySelector('#submit').addEventListener("click", submitClick);
