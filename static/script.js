@@ -6,8 +6,8 @@ function queryCharity(query, resultCallback) {
   jQuery.get(charity_url, resultCallback)
 }
 
-
-queryCharity("autism", function(data) {
+var query = document.getElementById('searchBox').value()
+queryCharity(query, function(data) {
   var resultstr = "";
   var div = ""
   for (var i = 0; i < data.length; i++){
@@ -23,4 +23,15 @@ queryCharity("autism", function(data) {
 
   var resultDiv = document.querySelector('#result')
   resultDiv.innerHTML = div
+});
+
+
+function submitClick() {
+  var inputBox = document.querySelector('#searchBox')
+  var userInput = inputBox.value
+  queryCharity(userInput, displayResult)
+}
+
+window.addEventListener('load', () => {
+  document.querySelector('#submit').addEventListener("click", submitClick)
 });
