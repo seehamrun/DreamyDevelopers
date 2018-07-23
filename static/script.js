@@ -33,3 +33,14 @@ window.addEventListener('load', () => {
   document.querySelector('#submit').addEventListener("click", submitClick)
   console.log('hello')
 });
+
+
+function submitClick() {
+  var inputBox = document.querySelector('#searchBox')
+  var userInput = inputBox.value
+  queryCharity(userInput, displayResult)
+}
+
+window.addEventListener('load', () => {
+  document.querySelector('#submit').addEventListener("click", submitClick)
+});
