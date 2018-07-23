@@ -6,6 +6,7 @@ function queryCharity(query, resultCallback) {
   jQuery.get(charity_url, resultCallback)
 }
 
+<<<<<<< HEAD
 var name = ''
 
 function submitClick() {
@@ -26,12 +27,24 @@ function submitClick() {
       var resultClassification = "<p>" + data[i].irsClassification.deductibility + "</p>"
       div = div + "<div>" + resultName + resultMission + resultClassification + "</div>"
     }
+=======
+>>>>>>> 21fa4c6ed6e1e5feea857c0a7d926eadf3bbffab
 
-    var resultDiv = document.querySelector('#result')
-    resultDiv.innerHTML = div
-  })
-}
+queryCharity("autism", function(data) {
+  var resultstr = "";
+  var div = ""
+  for (var i = 0; i < data.length; i++){
+    console.log(data[i].mission)
+    console.log(data[i].charityName)
+    console.log(data[i].irsClassification.deductibility)
+    //resultstr = resultstr + "<p>'" + missionStatement + ' ' + charityName + ' ' + irsClassification + "'</p>"
+    var resultName = "<h1>" + data[i].charityName + "</h1>"
+    var resultMission = "<p>" + data[i].mission + "</p>"
+    var resultClassification = "<p>" + data[i].irsClassification.deductibility + "</p>"
+    div = div + "<div>" + resultName + resultMission + resultClassification + "</div>"
+  }
 
+<<<<<<< HEAD
 function charityNews(charity, resultCallback) {
   var news_url = 'https://newsapi.org/v2/everything?'
           + 'q=' + charity
@@ -43,4 +56,8 @@ console.log(charityNews("Rise Against Hunger"))
 
 window.addEventListener('load', () => {
   document.querySelector('#submit').addEventListener("click", submitClick)
+=======
+  var resultDiv = document.querySelector('#result')
+  resultDiv.innerHTML = div
+>>>>>>> 21fa4c6ed6e1e5feea857c0a7d926eadf3bbffab
 });
