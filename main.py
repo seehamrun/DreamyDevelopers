@@ -41,13 +41,13 @@ class AboutUsHandler(webapp2.RequestHandler):
     def get (self):
         self.response.headers['Content-Type'] = 'text/html'
         response5_html = jinja_env.get_template('templates/aboutus.html')
-        self.response.write(response_html.render())
+        self.response.write(response5_html.render())
 
 class SearchHandler(webapp2.RequestHandler):
     def get (self):
         self.response.headers['Content-Type'] = 'text/html'
         response6_html = jinja_env.get_template('templates/search.html')
-        self.response.write(response_html.render())
+        self.response.write(response6_html.render())
 
 class ResultsHandler(webapp2.RequestHandler):
     def get (self):
