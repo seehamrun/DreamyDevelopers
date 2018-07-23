@@ -51,7 +51,23 @@ class AboutUsHandler(webapp2.RequestHandler):
         response_html = jinja_env.get_template('templates/aboutus.html')
         self.response.write(response_html.render())
 
+class SearchHandler(webapp2.RequestHandler):
+    def get (self):
+        self.response.headers['Content-Type'] = 'text/html'
+        response3_html = jinja_env.get_template('templates/search.html')
+        self.response.write(response3_html.render())
 
+class ResultsHandler(webapp2.RequestHandler):
+    def get (self):
+        self.response.headers['Content-Type'] = 'text/html'
+        response3_html = jinja_env.get_template('templates/results.html')
+        self.response.write(response3_html.render())
+
+class DonationHistoryHandler(webapp2.RequestHandler):
+    def get (self):
+        self.response.headers['Content-Type'] = 'text/html'
+        response4_html = jinja_env.get_template('templates/history.html')
+        self.response.write(response4_html.render())
 
 
 app = webapp2.WSGIApplication([
