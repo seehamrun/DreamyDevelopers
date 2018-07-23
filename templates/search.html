@@ -1,6 +1,9 @@
 <htlm>
   <head>
     <link rel="stylesheet" href="/static/styles/search.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/static/api.js"></script>
+    <script src="/static/script.js"></script>
     <title>
       Search
     </title>
@@ -12,10 +15,11 @@
           <a href="aboutus.html">About Us</a>
         </div>
         <div id="searchBar">
-          <form method="post">
-              <div>Search: <input type="text" name="searchQuery"></div>
-              <input type="submit" value="Search">
-          </form>
+          <!-- <form method="post"> -->
+            <div>Search: <input id="queryBox" type="text" name="searchQuery"></div>
+            <button id="submit">Search</button>
+          <!-- </form> -->
       </div>
+      <div id='result'></div>
       </body>
 </html>

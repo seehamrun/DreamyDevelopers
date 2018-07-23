@@ -1,2 +1,16 @@
 #searchBar {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -200px;
+}
+
+#search {
+  font-size: 20px;
+}
+input {
+  width: 400px;
+  height:45px;
+  font-size: 20px;
 }
