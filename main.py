@@ -18,16 +18,25 @@ class MainPageHandler(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         response_html = jinja_env.get_template('templates/index.html')
         self.response.write(response_html.render())
-# class SearchHandler(webapp2.RequestHandler):
-#     #have a get and post function
-# class ResultsHandler(webapp2.RequestHandler):
-#     #have a get function
-# class DetailsHandler(webapp2.RequestHandler):
-#     #get function
-# class DonationHistoryHandler(webapp2.RequestHandler):
-#     #get function
-# class FavCharityHandler(webapp2.RequestHandler):
-#     #get function
+
+class DetailsHandler(webapp2.RequestHandler):
+    def get(self):
+        self.response.headers['Content-Type'] = 'text/html'
+        response2_html = jinja_env.get_template('templates/details.html')
+        self.response.write(response2_html.render())
+
+class DonationHistoryHandler(webapp2.RequestHandler):
+    def get (self):
+        self.response.headers['Content-Type'] = 'text/html'
+        response3_html = jinja_env.get_template('templates/history.html')
+        self.response.write(response3_html.render())
+
+class FavCharityHandler(webapp2.RequestHandler):
+    def get (self):
+        self.response.headers['Content-Type'] = 'text/html'
+        response4_html = jinja_env.get_template('templates/favorites.html')
+        self.response.write(response4_html.render())
+
 class AboutUsHandler(webapp2.RequestHandler):
     def get (self):
         self.response.headers['Content-Type'] = 'text/html'
@@ -51,8 +60,8 @@ app = webapp2.WSGIApplication([
     ('/', MainPageHandler),
     ('/search', SearchHandler),
     ('/results', ResultsHandler),
-    # ('/details', DetailsHandler),
-    # ('/history', DonationHistoryHandler),
-    # ('/favorites', FavCharityHandler),
+    ('/details', DetailsHandler),
+    ('/history', DonationHistoryHandler),
+    ('/favorites', FavCharityHandler),
     ('/aboutus', AboutUsHandler)
 ], debug=True)
