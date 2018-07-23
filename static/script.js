@@ -9,9 +9,9 @@ var missionStatement = ""
 var charityName = ""
 var irsClassification = ""
 
-queryCharity("hunger", function(data) {
+queryCharity("homeless", function(data) {
   var resultstr = "";
-
+  var div = ""
   for (var i = 0; i < data.length; i++){
     missionStatement = data[i].mission
     charityName = data[i].charityName
@@ -19,10 +19,13 @@ queryCharity("hunger", function(data) {
     console.log(missionStatement)
     console.log(charityName)
     console.log(irsClassification)
-    resultstr = resultstr + "<p>'" + missionStatement + ' ' + charityName + ' ' + irsClassification + "'</p>"
-
+    //resultstr = resultstr + "<p>'" + missionStatement + ' ' + charityName + ' ' + irsClassification + "'</p>"
+    var resultName = "<h1>" + charityName + "</h1>"
+    var resultMission = "<p>" + missionStatement + "</p>"
+    var resultClassification = "<p>" + irsClassification + "</p>"
+    div = div + "<div>" + resultName + resultMission + resultClassification + "</div>"
   }
 
   var resultDiv = document.querySelector('#result')
-  resultDiv.innerHTML = resultstr
+  resultDiv.innerHTML = div
 });
