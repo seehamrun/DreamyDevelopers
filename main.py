@@ -46,10 +46,11 @@ class ResultsHandler(webapp2.RequestHandler):
         response3_html = jinja_env.get_template('templates/results.html')
         self.response.write(response3_html.render())
 
+
 app = webapp2.WSGIApplication([
     ('/', MainPageHandler),
     ('/search', SearchHandler),
-    ('/results', ResultsHandler),.
+    ('/results', ResultsHandler),
     # ('/details', DetailsHandler),
     # ('/history', DonationHistoryHandler),
     # ('/favorites', FavCharityHandler),
