@@ -18,56 +18,42 @@ class MainPageHandler(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         response_html = jinja_env.get_template('templates/index.html')
         self.response.write(response_html.render())
-class SearchHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.headers['Content-Type'] = 'text/html'
-        response_html = jinja_env.get_template('templates/search.html')
-        self.response.write(response_html.render())
-    def post(self):
-        #post for search bar button
-class ResultsHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.headers['Content-Type'] = 'text/html'
-        response_html = jinja_env.get_template('templates/results.html')
-        self.response.write(response_html.render())
+
 class DetailsHandler(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
-        response_html = jinja_env.get_template('templates/details.html')
-        self.response.write(response_html.render())
+        response2_html = jinja_env.get_template('templates/details.html')
+        self.response.write(response2_html.render())
+
 class DonationHistoryHandler(webapp2.RequestHandler):
-    def get(self):
+    def get (self):
         self.response.headers['Content-Type'] = 'text/html'
-        response_html = jinja_env.get_template('templates/history.html')
-        self.response.write(response_html.render())
+        response3_html = jinja_env.get_template('templates/history.html')
+        self.response.write(response3_html.render())
+
 class FavCharityHandler(webapp2.RequestHandler):
-    def get(self):
+    def get (self):
         self.response.headers['Content-Type'] = 'text/html'
-        response_html = jinja_env.get_template('templates/favorites.html')
-        self.response.write(response_html.render())
+        response4_html = jinja_env.get_template('templates/favorites.html')
+        self.response.write(response4_html.render())
+
 class AboutUsHandler(webapp2.RequestHandler):
-    def get(self):
+    def get (self):
         self.response.headers['Content-Type'] = 'text/html'
-        response_html = jinja_env.get_template('templates/aboutus.html')
-        self.response.write(response_html.render())
+        response5_html = jinja_env.get_template('templates/aboutus.html')
+        self.response.write(response5_html.render())
 
 class SearchHandler(webapp2.RequestHandler):
     def get (self):
         self.response.headers['Content-Type'] = 'text/html'
-        response3_html = jinja_env.get_template('templates/search.html')
-        self.response.write(response3_html.render())
+        response6_html = jinja_env.get_template('templates/search.html')
+        self.response.write(response6_html.render())
 
 class ResultsHandler(webapp2.RequestHandler):
     def get (self):
         self.response.headers['Content-Type'] = 'text/html'
-        response3_html = jinja_env.get_template('templates/results.html')
-        self.response.write(response3_html.render())
-
-class DonationHistoryHandler(webapp2.RequestHandler):
-    def get (self):
-        self.response.headers['Content-Type'] = 'text/html'
-        response4_html = jinja_env.get_template('templates/history.html')
-        self.response.write(response4_html.render())
+        response7_html = jinja_env.get_template('templates/results.html')
+        self.response.write(response7_html.render())
 
 
 app = webapp2.WSGIApplication([
