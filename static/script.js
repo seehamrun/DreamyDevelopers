@@ -36,10 +36,19 @@ function charityNews(charity, resultCallback) {
   var news_url = 'https://newsapi.org/v2/everything?'
           + 'q=' + charity
           + '&sortBy=popularity'
-          + 'apiKey=' + news_api_key
+          + '&apiKey=' + news_api_key
+  jQuery.get(news_url, resultCallback)
 }
 
-console.log(charityNews("Rise Against Hunger"))
+// var req = new Request(news_url);
+// fetch(req)
+//     .then(function(response) {
+//         console.log(response.json());
+//     })
+console.log('hey')
+charityNews("Rise Against Hunger", function(data) {
+  console.log(data)
+})
 
 window.addEventListener('load', () => {
   document.querySelector('#submit').addEventListener("click", submitClick)
