@@ -57,6 +57,17 @@ li {
     text-decoration: none;
 }
 
+<<<<<<< HEAD
 li a:hover, .dropdown:hover .dropbtn {
     background-color: red;
 } */
+=======
+li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+li a.active {
+    color: white;
+    background-color: #afaeae;
+}
+>>>>>>> 9e46733e681d1a729820c599e657b585b14642cf
