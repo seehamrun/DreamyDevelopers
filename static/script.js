@@ -10,6 +10,19 @@ var charityName = ""
 var irsClassification = ""
 
 queryCharity("hunger", function(data) {
-  console.log(data);
-  console.log('hey hi hello')
+  var resultstr = "";
+
+  for (var i = 0; i < data.length; i++){
+    missionStatement = data[i].mission
+    charityName = data[i].charityName
+    irsClassification = data[i].irsClassification
+    console.log(missionStatement)
+    console.log(charityName)
+    console.log(irsClassification)
+    resultstr = resultstr + "<p>'" + missionStatement + ' ' + charityName + ' ' + irsClassification + "'</p>"
+
+  }
+
+  var resultDiv = document.querySelector('#result')
+  resultDiv.innerHTML = resultstr
 });
