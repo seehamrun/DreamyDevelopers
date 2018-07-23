@@ -1,11 +1,11 @@
 <html>
   <head>
-
+    <link rel="stylesheet" href="/styles/favorites.css">
   </head>
 
   <body>
-    <a href="/search">Search for Charities</a>
-    <a href="/history">Donation History</a>
+    <a href="/templates/search.html">Search for Charities</a>
+    <a href="/templates/history.html">Donation History</a>
     <h1>Favorite Charities</h1>
     <table>
       <tr>
@@ -13,8 +13,26 @@
         <td>Star Rating</td>
         <td>Deductibility</td>
         <td>Delete</td>
-        <td><a href="/delete_charity?charity_id={{charity.key.urlsafe()}}">Delete</a></td>
       </tr>
+    </tr>
+    <tr>
+      <td><input name="charity[name]"></td>
+      <td><input name="charity[rating]"></td>
+      <td><input name="charity[deductibility]"></td>
+      <td><a href="/delete_charity?charity_id={{charity.key.urlsafe()}}">Delete</a></td>
+    </tr>
+    <tr>
+      <td><input name="charity[name]"></td>
+      <td><input name="charity[rating]"></td>
+      <td><input name="charity[deductibility]"></td>
+      <td><a href="/delete_charity?charity_id={{charity.key.urlsafe()}}">Delete</a></td>
+    </tr>
+    <tr>
+      <td><input name="charity[name]"></td>
+      <td><input name="charity[rating]"></td>
+      <td><input name="charity[deductibility]"></td>
+      <td><a href="/delete_charity?charity_id={{charity.key.urlsafe()}}">Delete</a></td>
+    </tr>
     </table>
   </body>
 </html>

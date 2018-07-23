@@ -15,7 +15,9 @@ jinja_env = jinja2.Environment(
 
 class MainPageHandler(webapp2.RequestHandler):
     def get(self):
-        return 15
+        self.response.headers['Content-Type'] = 'text/html'
+        response_html = jinja_env.get_template('templates/index.html')
+        return self.response.write(response_html.render())
 # class SearchHandler(webapp2.RequestHandler):
 #     #have a get and post function
 # class ResultsHandler(webapp2.RequestHandler):
@@ -27,9 +29,9 @@ class MainPageHandler(webapp2.RequestHandler):
 # class FavCharityHandler(webapp2.RequestHandler):
 #     #get function
 # class AboutUsHandler(webapp2.RequestHandler):
-    #get function
+#     #get function
 
-
+print('ayo ma')
 
 
 app = webapp2.WSGIApplication([

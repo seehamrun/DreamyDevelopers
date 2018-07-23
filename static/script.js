@@ -1,12 +1,12 @@
 function queryCharity(query, resultCallback) {
-  var charity_url = "http://api.charitynavigator.org/api/v1/search/?app_key=APP_KEY&app_id=APP_ID&field=value"
-                  + "api_key=" + api_key
-                  + "&q=" + query
-                  + "&limit=" + 1
+  var charity_url = 'https://api.data.charitynavigator.org/v2/Organizations?app_id=71c6533f&app_key=75f35a7eec548de064e93a2cdbf3d29d&search=' + query
+                  + '&rated=true'
   jQuery.get(charity_url, resultCallback)
 }
+// var charity_url = 'https://api.data.charitynavigator.org/v2/Organizations?app_id=71c6533f&app_key=75f35a7eec548de064e93a2cdbf3d29d&search=' + query
+// + '&rated=true'
 
-console.log(queryCharity("hunger"))
+//console.log(queryCharity())
 console.log('hey hi hello')
 
 
@@ -23,4 +23,4 @@ console.log('hey hi hello')
 
   // somehow reformat this so it corresponds with the charity navigator api
   // jQuery.get(giphy_url, resultCallback)
-}
+//}
