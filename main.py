@@ -17,7 +17,9 @@ class MainPageHandler(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
         response_html = jinja_env.get_template('templates/index.html')
+        response2_html = jinja_env.get_template('templates/aboutus.html')
         self.response.write(response_html.render())
+        self.response.write(response2_html.render())
 # class SearchHandler(webapp2.RequestHandler):
 #     #have a get and post function
 # class ResultsHandler(webapp2.RequestHandler):
