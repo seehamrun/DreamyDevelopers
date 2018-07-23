@@ -45,7 +45,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: grey;
+  background-color: #afaeae;
 }
 
 li {
@@ -54,15 +54,16 @@ li {
 
 li a {
   display: block;
-  color: #666;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 li a:hover:not(.active) {
-  background-color: #ddd;
+  background-color: grey;
 }
+/* #ddd */
 
 li a.active {
   color: white;
