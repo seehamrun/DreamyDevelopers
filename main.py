@@ -46,8 +46,8 @@ class AboutUsHandler(webapp2.RequestHandler):
 # class SearchHandler(webapp2.RequestHandler):
 #     def get (self):
 #         self.response.headers['Content-Type'] = 'text/html'
-#         response_html = jinja_env.get_template('templates/search.html')
-#         self.response.write(response_html.render())
+#         response_html6 = jinja_env.get_template('templates/search.html')
+#         self.response.write(response_html6.render())
 
 class ResultsHandler(webapp2.RequestHandler):
     def get (self):
