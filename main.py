@@ -40,21 +40,28 @@ class FavCharityHandler(webapp2.RequestHandler):
 class AboutUsHandler(webapp2.RequestHandler):
     def get (self):
         self.response.headers['Content-Type'] = 'text/html'
-        response_html = jinja_env.get_template('templates/aboutus.html')
-        self.response.write(response_html.render())
+        response5_html = jinja_env.get_template('templates/aboutus.html')
+        self.response.write(response5_html.render())
 
+<<<<<<< HEAD
 # class SearchHandler(webapp2.RequestHandler):
 #     def get (self):
 #         self.response.headers['Content-Type'] = 'text/html'
 #         response_html = jinja_env.get_template('templates/search.html')
 #         self.response.write(response_html.render())
+=======
+class SearchHandler(webapp2.RequestHandler):
+    def get (self):
+        self.response.headers['Content-Type'] = 'text/html'
+        response6_html = jinja_env.get_template('templates/search.html')
+        self.response.write(response6_html.render())
+>>>>>>> 17f878eed169b39b8831dac087c1fb4345cce866
 
 class ResultsHandler(webapp2.RequestHandler):
     def get (self):
         self.response.headers['Content-Type'] = 'text/html'
-        response_html = jinja_env.get_template('templates/results.html')
-        self.response.write(response_html.render())
-
+        response7_html = jinja_env.get_template('templates/results.html')
+        self.response.write(response7_html.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainPageHandler),
