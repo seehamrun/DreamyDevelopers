@@ -54,7 +54,7 @@ class ResultsHandler(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         response7_html = jinja_env.get_template('templates/results.html')
         self.response.write(response7_html.render())
-
+        
 
 app = webapp2.WSGIApplication([
     ('/', MainPageHandler),
