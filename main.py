@@ -16,7 +16,7 @@ jinja_env = jinja2.Environment(
 class MainPageHandler(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
-        response_html = jinja_env.get_template('templates/index.html')
+        response_html = jinja_env.get_template('templates/search.html')
         self.response.write(response_html.render())
 
 class DetailsHandler(webapp2.RequestHandler):
@@ -41,14 +41,13 @@ class AboutUsHandler(webapp2.RequestHandler):
     def get (self):
         self.response.headers['Content-Type'] = 'text/html'
         response5_html = jinja_env.get_template('templates/aboutus.html')
-        self.response.write(response_html.render())
+        self.response.write(response5_html.render())
 
-class SearchHandler(webapp2.RequestHandler):
-    def get (self):
-        self.response.headers['Content-Type'] = 'text/html'
-        response6_html = jinja_env.get_template('templates/search.html')
-        self.response.write(response_html.render())
-    # def post (self):
+# class SearchHandler(webapp2.RequestHandler):
+#     def get (self):
+#         self.response.headers['Content-Type'] = 'text/html'
+#         response_html6 = jinja_env.get_template('templates/search.html')
+#         self.response.write(response_html6.render())
 
 class ResultsHandler(webapp2.RequestHandler):
     def get (self):
@@ -56,10 +55,9 @@ class ResultsHandler(webapp2.RequestHandler):
         response7_html = jinja_env.get_template('templates/results.html')
         self.response.write(response7_html.render())
 
-
 app = webapp2.WSGIApplication([
     ('/', MainPageHandler),
-    ('/search', SearchHandler),
+    #('/search', SearchHandler),
     ('/results', ResultsHandler),
     ('/details', DetailsHandler),
     ('/history', DonationHistoryHandler),

@@ -6,23 +6,32 @@ function queryCharity(query, resultCallback) {
   jQuery.get(charity_url, resultCallback)
 }
 
-var query = document.getElementById('searchBox').value()
-queryCharity(query, function(data) {
-  var resultstr = "";
-  var div = ""
-  for (var i = 0; i < data.length; i++){
-    console.log(data[i].mission)
-    console.log(data[i].charityName)
-    console.log(data[i].irsClassification.deductibility)
-    //resultstr = resultstr + "<p>'" + missionStatement + ' ' + charityName + ' ' + irsClassification + "'</p>"
-    var resultName = "<h1>" + data[i].charityName + "</h1>"
-    var resultMission = "<p>" + data[i].mission + "</p>"
-    var resultClassification = "<p>" + data[i].irsClassification.deductibility + "</p>"
-    div = div + "<div>" + resultName + resultMission + resultClassification + "</div>"
-  }
+function submitClick() {
+  console.log('hi')
+  var inputBox = document.querySelector('#queryBox')
+  var userInput = inputBox.value
+  queryCharity(userInput, function(data) {
+    //var resultstr = "";
+    var div = ""
+    for (var i = 0; i < data.length; i++){
+      console.log(data[i].mission)
+      console.log(data[i].charityName)
+      console.log(data[i].irsClassification.deductibility)
+      //resultstr = resultstr + "<p>'" + missionStatement + ' ' + charityName + ' ' + irsClassification + "'</p>"
+      var resultName = "<h1>" + data[i].charityName + "</h1>"
+      var resultMission = "<p>" + data[i].mission + "</p>"
+      var resultClassification = "<p>" + data[i].irsClassification.deductibility + "</p>"
+      div = div + "<div>" + resultName + resultMission + resultClassification + "</div>"
+    }
 
-  var resultDiv = document.querySelector('#result')
-  resultDiv.innerHTML = div
+    var resultDiv = document.querySelector('#result')
+    resultDiv.innerHTML = div
+  })
+}
+
+window.addEventListener('load', () => {
+  document.querySelector('#submit').addEventListener("click", submitClick)
+  console.log('hello')
 });
 
 
