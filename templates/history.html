@@ -30,13 +30,13 @@
             <td>Amount Donated</td>
             <td>Date of Donation</td>
           </tr>
-          <!-- {% for entry in donationHistory %} -->
-            <td>{{charityName}}</td>
-            <td>{{amountDonated}}</td>
-            <td>{{dateDonated}}</td>
-            <!-- {% endfor %} -->
+          {% for donation in donations %}
           <tr>
+            <td>{{donation.charityName}}</td>
+            <td>{{donation.amountDonated}}</td>
+            <td>{{donation.dateDonated}}</td>
           </tr>
+          {% endfor %}
         </table>
   </body>
 </html>

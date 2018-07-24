@@ -15,6 +15,7 @@ charityDetails(einLookup, function(data) {
   deductibility.innerHTML = data.irsClassification.deductibility
   var website = document.querySelector('#website')
   website.innerHTML = data.websiteURL
+  website.href = data.websiteURL
   var cause = document.querySelector('#cause')
   cause.innerHTML = data.mission
 })
