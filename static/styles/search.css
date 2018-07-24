@@ -1,7 +1,7 @@
 #searchBar {
-  position: fixed;
-  top: 50%;
-  left: 50%;
+  position: absolute;
+  top: 15%;
+  left: 17%;
   margin-top: -50px;
   margin-left: -200px;
 }
@@ -9,8 +9,16 @@
 #search {
   font-size: 20px;
 }
+
 input {
   width: 400px;
   height:45px;
   font-size: 20px;
+}
+
+#result {
+  position: absolute;
+  top: 15%;
+  left: 3%;
+  right: 3%
 }
