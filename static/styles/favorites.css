@@ -39,3 +39,7 @@ th, td {
 table {
   width:50%;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
