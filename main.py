@@ -2,7 +2,8 @@ import webapp2
 import logging
 import jinja2
 import os
-#import database
+import database
+import datetime
 
 from google.appengine.api import users
 from google.appengine.ext import ndb
@@ -36,13 +37,13 @@ class DonationHistoryHandler(webapp2.RequestHandler):
         amountDonated = self.request.get('amountDonated')
         dateDonated = self.request.get('dateDonated')
         stored_donation = database.DatabaseHistory(charityName=charityName,
-            amountDonated=amountDonated, dateDonated=dateDonated)
+            amountDonated= float(amountDonated), dateDonated=dateDonated)
         stored_donation.put()
         response3_html = jinja_env.get_template('templates/history.html')
         data = {
-            'donation': donation
+            'donation': stored_donation
         }
-        self.response.write(response_html.render(data))
+        self.response.write(response3_html.render(data))
 
 
 class FavCharityHandler(webapp2.RequestHandler):
