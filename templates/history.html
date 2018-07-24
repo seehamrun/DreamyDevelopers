@@ -6,18 +6,19 @@
     </title>
   <head>
   <body>
-        <form method="post">
-          <a href="favorites.html">Favorite Charities</a>
-          <a href="history.html">Donation History</a>
-          <a href="aboutus.html">About Us</a>
-    <div>Charity: <input type="text" name="charity"></div>
-    <div>Amount Donated: <input type="text" name="amountDonated"></div>
-    <div>Date of Donation: <input type="text" name="dateDonation"></div>
-    <input type="submit">
+    <div id="navBar">
+    <a href="favorites.html">Favorite Charities</a>
+    <a href="history.html">Donation History</a>
+    <a href="aboutus.html">About Us</a>
+  </div>
+        <form id="wrapper" method="post">
+      <div class="inputContainer">Charity:<input type="text" name="charity"></div>
+      <div class="inputContainer">Amount Donated: <input type="text" name="amountDonated"></div>
+      <div class="inputContainer">Date of Donation: <input type="text" name="dateDonation"></div>
+    <input id="submitButton" type="submit">
         </form>
-
         <table>
-          <tr>
+          <tr id="topRow">
             <td>Charity</td>
             <td>Amount Donated</td>
             <td>Date of Donation</td>
