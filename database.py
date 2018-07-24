@@ -5,5 +5,7 @@ class DatabaseHistory(ndb.Model):
     amountDonated = ndb.FloatProperty()
     dateDonated = ndb.StringProperty()
 
-# class DatabaseFavs(ndb.Model):
-#     #TODO: insert the elements we want displayed with each favorite charity
+class DatabaseFavs(ndb.Model):
+    name = ndb.StringProperty()
+    rating = ndb.IntegerProperty()
+    deductibility = ndb.StringProperty()

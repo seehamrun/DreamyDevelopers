@@ -31,19 +31,6 @@ function submitClick() {
   })
 }
 
-function charityDetails(ein, resultCallback) {
-  var details_url = 'https://api.data.charitynavigator.org/v2/Organizations/'
-                  + ein
-                  + '?app_id=71c6533f'
-                  + '&app_key=' + charity_api_key
-  jQuery.get(details_url, resultCallback)
-}
-
-// function toCharityPage() {
-//   charityDetails(161541024, function(data) {
-//     console.log(data)
-//   })
-// }
 
 function charityNews(charity, resultCallback) {
   var news_url = 'https://newsapi.org/v2/everything?'
