@@ -2,22 +2,36 @@ h1 {
   font-size: 80px;
   text-align: center;
   color:  #ffce00;
+  /* color: #a5f0ff; */
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   text-transform: uppercase;
 }
 
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: #353535;
+}
+
+body {
+ font-family: 'Roboto', sans-serif;
+ font-weight: 200;
+}
+
 #mariam {
   padding-bottom: 200px;
-  border: 5px solid black;
+  padding-left: 20px;
+  border: 3px solid #afaeae;
   margin-right: 60%;
   display: block;
 }
 
 #isabella {
   padding-bottom: 200px;
+  padding-left: 20px;
   padding-right: 20px;
-  border: 5px solid black;
+  border: 3px solid #afaeae;
   display: block;
   right: 0;
   margin-left: 60%;
@@ -26,7 +40,8 @@ h1 {
 
 #walter {
   padding-bottom: 200px;
-  border: 5px solid black;
+  padding-left: 20px;
+  border: 3px solid #afaeae;
   margin-right: 60%;
   margin-top: 10%;
   display: block;
@@ -34,8 +49,9 @@ h1 {
 
 #sam {
   padding-bottom: 200px;
+  padding-left: 20px;
   padding-right: 20px;
-  border: 5px solid black;
+  border: 3px solid #afaeae;
   right: 0;
   display: inline-block;
   margin-left: 60%;
@@ -72,3 +88,5 @@ li a.active {
   color: white;
   background-color: #afaeae;
 }
+
+/* color: #a5f0ff; */
