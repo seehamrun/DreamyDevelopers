@@ -3,7 +3,7 @@
   top: 16%;
   left: 17%;
   margin-top: -50px;
-  margin-left: -200px;
+  margin-left: -190px;
 }
 
 button {
@@ -71,4 +71,8 @@ input {
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+table {
+  margin-top: 100px;
 }
