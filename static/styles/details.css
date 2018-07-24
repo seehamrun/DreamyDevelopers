@@ -1,8 +1,8 @@
 /* nav bar */
 h1 {
-  font-size: 30px;
+  font-size: 50px;
   /* color:  #ffce00; */
-  color: #a5f0ff;
+  color: #07deff;
   font-family: 'Roboto', sans-serif;
   font-weight: 200;
 }
@@ -11,6 +11,19 @@ h2 {
   font-family: 'Roboto', sans-serif;
   font-weight: 200;
   color: #353535;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: #353535;
+}
+
+h4 {
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: #ffce00;
 }
 
 body {
@@ -45,4 +58,35 @@ li a:hover:not(.active) {
 li a.active {
   color: white;
   background-color: #afaeae;
+}
+
+#name {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  padding-left: 20px;
+  border: 3px solid #e8e8e8;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 60px;
+  display: block;
+  background-color: #e8e8e8;
+}
+
+#star_ded {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  padding-left: 20px;
+  border: 3px solid #e8e8e8;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 60px;
+  display: block;
+  background-color: #e8e8e8;
+}
+
+#social {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  display: block;
+  margin-top: 90%;
 }
