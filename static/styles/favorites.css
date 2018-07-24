@@ -27,3 +27,15 @@ li a.active {
   color: white;
   background-color: #afaeae;
 }
+
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
+#firstRow {
+  font-weight: bold;
+}
+
+table {
+  width:50%;
+}

@@ -8,8 +8,9 @@
   <body>
     <!-- nav bar -->
     <ul>
-      <li><a href="/favorites">My Favorites</a></li>
       <li><a href="/">Search for a Charity</a></li>
+      <li><a href="/favorites">My Favorites</a></li>
+      <li><a href="/history">Donation History</a></li>
       <li><a href="/aboutus">About Us</a></li>
     </ul>
   <h1> Donation History </h1>
@@ -17,8 +18,8 @@
         <form method="post">
     <ul id="listOfInputs">
     <li id="firstInput">Charity: <input type="text" name="charity"></li>
-    <li class="inputs">Amount Donated: <input type="text" name="amountDonated"></li>
-    <li class="inputs">Date of Donation: <input type="text" name="dateDonation"></li>
+    <li class="inputs">Amount Donated: <input type="text" name="amountDonated" placeholder="enter without currency"></li>
+    <li class="inputs">Date of Donation: <input type="text" name="dateDonated" placeholder="mm/dd/yyyy"></li>
     <input class="inputs" id="submitButton" type="submit">
   </ul>
         </form>
@@ -28,9 +29,9 @@
             <td>Amount Donated</td>
             <td>Date of Donation</td>
           </tr>
-            <td>{{userCharity}}</td>
-            <td>{{userAmount}}</td>
-            <td>{{userDonationDate}}</td>
+            <td>{{charityName}}</td>
+            <td>{{amountDonated}}</td>
+            <td>{{dateDonated}}</td>
           <tr>
           </tr>
         </table>

@@ -1,6 +1,21 @@
 /* nav bar */
 h1 {
   font-size: 30px;
+  /* color:  #ffce00; */
+  color: #a5f0ff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: #353535;
+}
+
+body {
+ font-family: 'Roboto', sans-serif;
+ font-weight: 200;
 }
 
 ul {

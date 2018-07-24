@@ -2,6 +2,8 @@ import webapp2
 import logging
 import jinja2
 import os
+import database
+import datetime
 from google.appengine.ext import ndb
 # import database
 
@@ -31,7 +33,7 @@ class DetailsHandler(webapp2.RequestHandler):
         self.response.write(response2_html.render(data))
 
 class DonationHistoryHandler(webapp2.RequestHandler):
-    def get (self):
+    def get(self):
         self.response.headers['Content-Type'] = 'text/html'
         response_html = jinja_env.get_template('templates/history.html')
         self.response.write(response_html.render())
@@ -40,6 +42,20 @@ class DatabaseCharity(ndb.Model):
     name = ndb.StringProperty()
     rating = ndb.IntegerProperty()
     deductibility = ndb.IntegerProperty()
+
+    def post(self):
+        charityName = self.request.get('charityName')
+        amountDonated = self.request.get('amountDonated')
+        dateDonated = self.request.get('dateDonated')
+        stored_donation = database.DatabaseHistory(charityName=charityName,
+            amountDonated= float(amountDonated), dateDonated=dateDonated)
+        stored_donation.put()
+        response3_html = jinja_env.get_template('templates/history.html')
+        data = {
+            'donation': stored_donation
+        }
+        self.response.write(response3_html.render(data))
+
 
 class FavCharityHandler(webapp2.RequestHandler):
     def get (self):
