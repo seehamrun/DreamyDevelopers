@@ -1,6 +1,6 @@
 #searchBar {
   position: absolute;
-  top: 15%;
+  top: 16%;
   left: 17%;
   margin-top: -50px;
   margin-left: -200px;
@@ -42,7 +42,29 @@ input {
 
 #result {
   position: absolute;
-  top: 15%;
+  top: 16%;
   left: 3%;
-  right: 3%
+  right: 3%;
+}
+
+#loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid blue;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

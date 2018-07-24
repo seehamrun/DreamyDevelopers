@@ -9,22 +9,19 @@
       Search
     </title>
   <head>
-      <body>
-        <!-- <div id ="navBar">
-          <a href="favorites.html">Favorite Charities</a>
-          <a href="history.html">Donation History</a>
-          <a href="aboutus.html">About Us</a>
-        </div> -->
-        <ul>
-          <li><a href="/">Search for a Charity</a></li>
-          <li><a href="/favorites">My Favorites</a></li>
-          <li><a href="/history">Donation History</a></li>
-          <li><a href="/aboutus">About Us</a></li>
-        </ul>
-        <div id="searchBar">
-            Search: <input id="queryBox" type="text" name="searchQuery">
-            <button id="submit">Search</button>
-      </div>
-      <div id='result'></div>
-      </body>
+  <body>
+    <ul>
+      <li><a href="/aboutus">About Us</a></li>
+      <li><a href="/favorites">My Favorites</a></li>
+      <li><a href="/history">Donation History</a></li>
+    </ul>
+    <div id="loader" style='display:none'></div>
+    <div id="searchBar">
+        Find A Charity: <input id="queryBox" type="text" name="searchQuery">
+        <button id="submit">Search</button>
+    </div>
+    <div id="resultPane" style='display:none'>
+      <div id="result"</div>
+    </div>
+  </body>
 </html>
