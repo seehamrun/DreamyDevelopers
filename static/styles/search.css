@@ -6,6 +6,30 @@
   margin-left: -200px;
 }
 
+button {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 11px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+#submit {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+#submit:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
 #search {
   font-size: 20px;
 }

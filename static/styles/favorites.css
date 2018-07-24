@@ -1,3 +1,4 @@
+/* nav bar */
 ul {
   list-style-type: none;
   margin: 0;
@@ -21,7 +22,6 @@ li a {
 li a:hover:not(.active) {
   background-color: grey;
 }
-/* #ddd */
 
 li a.active {
   color: white;

@@ -1,4 +1,4 @@
-<htlm>
+<html>
   <head>
     <link rel="stylesheet" href="/static/styles/history.css">
     <title>
@@ -6,18 +6,24 @@
     </title>
   <head>
   <body>
+    <!-- nav bar -->
+    <ul>
+      <li><a href="/">Search for a Charity</a></li>
+      <li><a href="/favorites">My Favorites</a></li>
+      <li><a href="/aboutus">About Us</a></li>
+    </ul>
+  <h1> Donation History </h1>
+  <p> Keep a record of all the charities you have donated to below.
         <form method="post">
-          <a href="favorites">Favorite Charities</a>
-          <a href="history.html">Donation History</a>
-          <a href="aboutus.html">About Us</a>
-    <div>Charity: <input type="text" name="charityName"></div>
-    <div>Amount Donated: <input type="text" name="amountDonated" placeholder="enter without currency"></div>
-    <div>Date of Donation: <input type="text" name="dateDonated" placeholder="mm/dd/yyyy"></div>
-    <input type="submit">
+    <ul id="listOfInputs">
+    <li id="firstInput">Charity: <input type="text" name="charity"></li>
+    <li class="inputs">Amount Donated: <input type="text" name="amountDonated" placeholder="enter without currency"></li>
+    <li class="inputs">Date of Donation: <input type="text" name="dateDonated" placeholder="mm/dd/yyyy"></li>
+    <input class="inputs" id="submitButton" type="submit">
+  </ul>
         </form>
-
         <table>
-          <tr>
+          <tr id="topRow">
             <td>Charity</td>
             <td>Amount Donated</td>
             <td>Date of Donation</td>

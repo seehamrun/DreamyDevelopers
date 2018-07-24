@@ -1,6 +1,6 @@
+/* nav bar */
 h1 {
-  font-size: 80px;
-  text-align: center;
+  font-size: 30px;
 }
 
 ul {
@@ -26,7 +26,6 @@ li a {
 li a:hover:not(.active) {
   background-color: grey;
 }
-/* #ddd */
 
 li a.active {
   color: white;
