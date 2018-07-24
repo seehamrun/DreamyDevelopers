@@ -81,7 +81,7 @@ class DeleteCharityHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainPageHandler),
-    #('/search', SearchHandler),
+    ('/search', SearchHandler),
     # ('/results', ResultsHandler),
     ('/details', DetailsHandler),
     ('/history', DonationHistoryHandler),
