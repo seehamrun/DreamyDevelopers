@@ -2,6 +2,7 @@ import webapp2
 import logging
 import jinja2
 import os
+from google.appengine.ext import ndb
 #import database
 
 from google.appengine.api import users
@@ -43,17 +44,32 @@ class AboutUsHandler(webapp2.RequestHandler):
         response5_html = jinja_env.get_template('templates/aboutus.html')
         self.response.write(response5_html.render())
 
+class DeleteCharityHandler(webapp2.RequestHandler):
+    def get(self):
+        charity_to_delete = self.request.get('charity_id')
+        response6_html= jinja_env.get_template('templates/favorites.html')
+        key = ndb.Key(urlsafe=charity_to_delete)
+        the_charity = key.get()
+        data = {
+            "charityName": the_charity.name,
+            "charity_id": the_charity.key.urlsafe()
+        }
+        self.response.write(response6_html.render(data))
+    def post(self):
+        key = ndb.Key(urlsafe=self.request.get('charity_id'))
+        key.delete()
+
 # class SearchHandler(webapp2.RequestHandler):
 #     def get (self):
 #         self.response.headers['Content-Type'] = 'text/html'
-#         response_html6 = jinja_env.get_template('templates/search.html')
-#         self.response.write(response_html6.render())
+#         response_html7 = jinja_env.get_template('templates/search.html')
+#         self.response.write(response_html7.render())
 
 # class ResultsHandler(webapp2.RequestHandler):
 #     def get (self):
 #         self.response.headers['Content-Type'] = 'text/html'
-#         response7_html = jinja_env.get_template('templates/results.html')
-#         self.response.write(response7_html.render())
+#         response8_html = jinja_env.get_template('templates/results.html')
+#         self.response.write(response8_html.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainPageHandler),
