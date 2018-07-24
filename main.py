@@ -3,7 +3,7 @@ import logging
 import jinja2
 import os
 from google.appengine.ext import ndb
-#import database
+# import database
 
 from google.appengine.api import users
 from google.appengine.ext import ndb
@@ -23,38 +23,46 @@ class MainPageHandler(webapp2.RequestHandler):
 class DetailsHandler(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
-        response2_html = jinja_env.get_template('templates/details.html')
-        self.response.write(response2_html.render())
+        response_html = jinja_env.get_template('templates/details.html')
+        self.response.write(response_html.render())
 
 class DonationHistoryHandler(webapp2.RequestHandler):
     def get (self):
         self.response.headers['Content-Type'] = 'text/html'
-        response3_html = jinja_env.get_template('templates/history.html')
-        self.response.write(response3_html.render())
+        response_html = jinja_env.get_template('templates/history.html')
+        self.response.write(response_html.render())
+
+class DatabaseCharity(ndb.Model):
+    name = ndb.StringProperty()
+    rating = ndb.IntegerProperty()
+    deductibility = ndb.IntegerProperty()
 
 class FavCharityHandler(webapp2.RequestHandler):
     def get (self):
         self.response.headers['Content-Type'] = 'text/html'
-        response4_html = jinja_env.get_template('templates/favorites.html')
-        self.response.write(response4_html.render())
+        response_html = jinja_env.get_template('templates/favorites.html')
+        values = {
+            "charities": DatabaseCharity.query().fetch()
+        }
+        self.response.write(response_html.render(values))
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get (self):
         self.response.headers['Content-Type'] = 'text/html'
-        response5_html = jinja_env.get_template('templates/aboutus.html')
-        self.response.write(response5_html.render())
+        response_html = jinja_env.get_template('templates/aboutus.html')
+        self.response.write(response_html.render())
 
 class DeleteCharityHandler(webapp2.RequestHandler):
     def get(self):
         charity_to_delete = self.request.get('charity_id')
-        response6_html= jinja_env.get_template('templates/favorites.html')
+        response_html= jinja_env.get_template('templates/favorites.html')
         key = ndb.Key(urlsafe=charity_to_delete)
         the_charity = key.get()
         data = {
             "charityName": the_charity.name,
             "charity_id": the_charity.key.urlsafe()
         }
-        self.response.write(response6_html.render(data))
+        self.response.write(response_html.render(data))
     def post(self):
         key = ndb.Key(urlsafe=self.request.get('charity_id'))
         key.delete()
