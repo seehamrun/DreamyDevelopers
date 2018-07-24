@@ -26,3 +26,32 @@ li a.active {
   color: white;
   background-color: #afaeae;
 }
+
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
+#submitButton {
+  width: 100px;
+}
+
+#topRow {
+  font-weight: bold;
+}
+
+#firstInput {
+  margin-left: 0px;
+}
+
+#listOfInputs {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+.inputs {
+  float: left;
+  margin-left: 20px;
+}
