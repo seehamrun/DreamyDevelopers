@@ -1,0 +1,17 @@
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
+#wrapper {
+  display:grid;
+  grid-template-rows: 17px;
+  grid-template-columns: 1.5fr 2fr 2fr 2fr;
+}
+
+#submitButton {
+  width: 100px;
+}
+
+#topRow {
+  font-weight: bold;
+}
