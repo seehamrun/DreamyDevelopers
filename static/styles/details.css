@@ -141,3 +141,15 @@ li a.active {
     background-color: transparent;
     text-decoration: underline;
 }
+
+button {
+  margin-left: 50px;
+  padding: 20px;
+  margin-top: 20px;
+  color: white;
+  border: #ffce00;
+  background-color: #ffce00;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+}
