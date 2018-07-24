@@ -37,11 +37,6 @@ class DonationHistoryHandler(webapp2.RequestHandler):
         response_html = jinja_env.get_template('templates/history.html')
         self.response.write(response_html.render())
 
-class DatabaseCharity(ndb.Model):
-    name = ndb.StringProperty()
-    rating = ndb.IntegerProperty()
-    deductibility = ndb.IntegerProperty()
-
     def post(self):
         charityName = self.request.get('charityName')
         amountDonated = self.request.get('amountDonated')
