@@ -16,7 +16,7 @@
   <p> Keep a record of all the charities you have donated to below.
         <form method="post">
     <ul id="listOfInputs">
-    <li id="firstInput">Charity: <input type="text" name="charity"></li>
+    <li id="firstInput">Charity: <input type="text" name="charityName"></li>
     <li class="inputs">Amount Donated: <input type="text" name="amountDonated" placeholder="enter without currency"></li>
     <li class="inputs">Date of Donation: <input type="text" name="dateDonated" placeholder="mm/dd/yyyy"></li>
     <input class="inputs" id="submitButton" type="submit">
@@ -28,9 +28,11 @@
             <td>Amount Donated</td>
             <td>Date of Donation</td>
           </tr>
+          <!-- {% for entry in donationHistory %} -->
             <td>{{charityName}}</td>
             <td>{{amountDonated}}</td>
             <td>{{dateDonated}}</td>
+            <!-- {% endfor %} -->
           <tr>
           </tr>
         </table>
