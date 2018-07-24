@@ -2,13 +2,10 @@ import webapp2
 import logging
 import jinja2
 import os
-<<<<<<< HEAD
 import database
 import datetime
-=======
 from google.appengine.ext import ndb
 # import database
->>>>>>> 84d87cba9388e224ac7de35e889e0f75acaee3fa
 
 from google.appengine.api import users
 from google.appengine.ext import ndb
