@@ -35,7 +35,11 @@ class DonationHistoryHandler(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
         response_html = jinja_env.get_template('templates/history.html')
-        self.response.write(response_html.render())
+        # self.response.write(response_html.render())
+        data = {
+            'donations': database.DatabaseHistory.query().fetch()
+        }
+        self.response.write(response_html.render(data))
 
     def post(self):
         charityName = self.request.get('charityName')
@@ -46,7 +50,7 @@ class DonationHistoryHandler(webapp2.RequestHandler):
         stored_donation.put()
         response3_html = jinja_env.get_template('templates/history.html')
         data = {
-            'donation': stored_donation
+            'donations': database.DatabaseHistory.query().fetch()
         }
         self.response.write(response3_html.render(data))
 
