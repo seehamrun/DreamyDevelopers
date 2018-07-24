@@ -11,11 +11,15 @@
       <li><a href="index.html">Search for a Charity</a></li>
       <li><a href="aboutus.html">About Us</a></li>
     </ul>
+  <h1> Donation History </h1>
+  <p> Keep a record of all the charities you have donated to below.
         <form method="post">
-    <div>Charity: <input type="text" name="charity"></div>
-    <div>Amount Donated: <input type="text" name="amountDonated"></div>
-    <div>Date of Donation: <input type="text" name="dateDonation"></div>
-    <input type="submit">
+    <ul id="listOfInputs">
+    <li id="firstInput">Charity: <input type="text" name="charity"></li>
+    <li class="inputs">Amount Donated: <input type="text" name="amountDonated"></li>
+    <li class="inputs">Date of Donation: <input type="text" name="dateDonation"></li>
+    <input class="inputs" id="submitButton" type="submit">
+  </ul>
         </form>
         <table>
           <tr id="topRow">
