@@ -1,6 +1,36 @@
 /* nav bar */
 h1 {
+  font-size: 50px;
+  /* color:  #ffce00; */
+  color: #07deff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: #07deff;
+  font-size: 40px
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
   font-size: 30px;
+  color: #ffce00;
+}
+
+h4 {
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: #ffce00;
+}
+
+body {
+ font-family: 'Roboto', sans-serif;
+ font-weight: 200;
 }
 
 ul {
@@ -30,4 +60,63 @@ li a:hover:not(.active) {
 li a.active {
   color: white;
   background-color: #afaeae;
+}
+
+#name {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  padding-left: 20px;
+  border: 3px solid #e8e8e8;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 60px;
+  display: block;
+  background-color: #e8e8e8;
+}
+
+#star_ded {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  padding-left: 20px;
+  border: 3px solid #e8e8e8;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 60px;
+  display: block;
+  background-color: #e8e8e8;
+}
+
+#star_rating {
+  padding-bottom: 30px;
+}
+
+#charity_cause {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  border: 3px solid #e8e8e8;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 60px;
+  display: block;
+  background-color: #e8e8e8;
+}
+
+#news {
+  padding-bottom: 50px;
+  padding-top: 50px;
+  padding-left: 20px;
+  border: 3px solid #e8e8e8;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 60px;
+  display: block;
+  background-color: #e8e8e8;
+}
+
+#social {
+  padding-bottom: 20px;
+  padding-left: 40px;
+  display: block;
+  margin-top: 90%;
 }
