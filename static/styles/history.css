@@ -55,3 +55,11 @@ th, td {
   float: left;
   margin-left: 20px;
 }
+
+td {
+  width: 20%;
+}
+
+table {
+  margin-left: 10px;
+}
