@@ -5,65 +5,67 @@ h1 {
 }
 
 #marium {
-  padding-bottom: 80px;
+  padding-bottom: 200px;
   border: 5px solid black;
-  margin-right: 50%;
+  margin-right: 60%;
   display: block;
 }
 
 #isabella {
-  padding-bottom: 80px;
+  padding-bottom: 200px;
   padding-right: 20px;
   border: 5px solid black;
   display: block;
   right: 0;
-  margin-left: 50%;
+  margin-left: 60%;
   margin-top: 0%;
 }
 
 #walter {
-  padding-bottom: 80px;
+  padding-bottom: 200px;
   border: 5px solid black;
-  margin-right: 50%;
+  margin-right: 60%;
   margin-top: 10%;
   display: block;
 }
 
 #sam {
-  padding-bottom: 80px;
+  padding-bottom: 200px;
   padding-right: 20px;
   border: 5px solid black;
   right: 0;
   display: inline-block;
-  margin-left: 50%;
+  margin-left: 60%;
   display: block;
   margin-top: 0px;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: grey;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #afaeae;
 }
 
 li {
-    float: left;
+  float: left;
 }
 
 li a {
-    display: block;
-    color: #666;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 li a:hover:not(.active) {
-    background-color: #ddd;
+  background-color: grey;
 }
+/* #ddd */
 
 li a.active {
-    color: white;
-    background-color: #afaeae;
+  color: white;
+  background-color: #afaeae;
+}
