@@ -3,7 +3,10 @@
     <link rel="stylesheet" href="/static/styles/details.css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto:300,700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>var einLookup={{ein}}</script>
+    <script src="/static/api.js"></script>
+    <script src="/static/details.js"></script>
   </head>
 
   <body>
@@ -15,14 +18,14 @@
       <li><a href="/aboutus">About Us</a></li>
     </ul>
     <div id="name">
-      <h1>Charity Name: {{charityName}}</h1>
+      <h1>Charity Name: <span id='charityName'></span></h1>
     </div>
-    <div id="star_ded">
-      <h3 id="star_rating">Star Rating:</h3>
-      <h3 id="deductibility">Deductibility:</h3>
+    <div id="website_ded">
+      <h3>Website: <a id='website' href=></a></h3>
+      <h3>Deductibility: <span id='deductibility'></span></h3>
     </div>
     <div>
-      <h2 id="charity_cause">Charity Cause:</h2>
+      <h2 id="charity_cause">Charity Cause: <span id='cause'></span></h2>
     </div>
     <div>
       <h2 id="news">News</h2>
