@@ -4,7 +4,6 @@ import jinja2
 import os
 import database
 import datetime
-from google.appengine.ext import ndb
 # import database
 
 from google.appengine.api import users
@@ -61,31 +60,13 @@ class FavCharityHandler(webapp2.RequestHandler):
     def get (self):
         self.response.headers['Content-Type'] = 'text/html'
         response_html = jinja_env.get_template('templates/favorites.html')
-        values = {
-            "charities": DatabaseCharity.query().fetch()
-        }
-        self.response.write(response_html.render(values))
+        self.response.write(response_html.render())
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get (self):
         self.response.headers['Content-Type'] = 'text/html'
         response_html = jinja_env.get_template('templates/aboutus.html')
         self.response.write(response_html.render())
-
-class DeleteCharityHandler(webapp2.RequestHandler):
-    def get(self):
-        charity_to_delete = self.request.get('charity_id')
-        response_html= jinja_env.get_template('templates/favorites.html')
-        key = ndb.Key(urlsafe=charity_to_delete)
-        the_charity = key.get()
-        data = {
-            "charityName": the_charity.name,
-            "charity_id": the_charity.key.urlsafe()
-        }
-        self.response.write(response_html.render(data))
-    def post(self):
-        key = ndb.Key(urlsafe=self.request.get('charity_id'))
-        key.delete()
 
 # class SearchHandler(webapp2.RequestHandler):
 #     def get (self):
