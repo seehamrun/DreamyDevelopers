@@ -59,6 +59,12 @@ body {
   margin-top: 0px;
 }
 
+#samPic {
+  width: 90%;
+  height: 90%;
+}
+
+
 /* nav bar */
 ul {
   list-style-type: none;
