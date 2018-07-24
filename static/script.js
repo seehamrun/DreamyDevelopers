@@ -45,8 +45,7 @@ function charityNews(charity, resultCallback) {
 //     .then(function(response) {
 //         console.log(response.json());
 //     })
-console.log('hey')
-charityNews("Rise Against Hunger", function(data) {
+charityNews('Cool', function(data) {
   console.log(data)
 })
 
