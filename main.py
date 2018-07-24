@@ -24,7 +24,11 @@ class DetailsHandler(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
         response2_html = jinja_env.get_template('templates/details.html')
-        self.response.write(response2_html.render())
+        charityName = self.request.get('charity')
+        data = {
+            'charityName': charityName
+        }
+        self.response.write(response2_html.render(data))
 
 class DonationHistoryHandler(webapp2.RequestHandler):
     def get (self):
