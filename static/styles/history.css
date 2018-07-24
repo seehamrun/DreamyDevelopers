@@ -1,17 +1,28 @@
-th, td {
-    border-bottom: 1px solid #ddd;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #afaeae;
 }
 
-#wrapper {
-  display:grid;
-  grid-template-rows: 17px;
-  grid-template-columns: 1.5fr 2fr 2fr 2fr;
+li {
+  float: left;
 }
 
-#submitButton {
-  width: 100px;
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-#topRow {
-  font-weight: bold;
+li a:hover:not(.active) {
+  background-color: grey;
+}
+
+li a.active {
+  color: white;
+  background-color: #afaeae;
 }

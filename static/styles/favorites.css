@@ -21,7 +21,6 @@ li a {
 li a:hover:not(.active) {
   background-color: grey;
 }
-/* #ddd */
 
 li a.active {
   color: white;
