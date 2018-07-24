@@ -21,7 +21,7 @@ function submitClick() {
 
       //resultstr = resultstr + "<p>'" + missionStatement + ' ' + charityName + ' ' + irsClassification + "'</p>"
       name = data[i].charityName
-      var resultName = "<h1>" + name + "</h1>"
+      var resultName = "<h1><a href='/details?charity=" + name + "'>" + name + "</a></h1>"
       var resultMission = "<p>" + data[i].mission + "</p>"
       var resultClassification = "<p>" + data[i].irsClassification.deductibility + "</p>"
       div = div + "<div>" + resultName + resultMission + resultClassification + "</div>"
@@ -35,17 +35,12 @@ function submitClick() {
 function charityNews(charity, resultCallback) {
   var news_url = 'https://newsapi.org/v2/everything?'
           + 'q=' + charity
-          + '&sortBy=popularity'
+          + '&sortBy=relevancy'
           + '&apiKey=' + news_api_key
   jQuery.get(news_url, resultCallback)
 }
 
-// var req = new Request(news_url);
-// fetch(req)
-//     .then(function(response) {
-//         console.log(response.json());
-//     })
-charityNews('Cool', function(data) {
+charityNews('Second Harvest Heartland', function(data) {
   console.log(data)
 })
 
