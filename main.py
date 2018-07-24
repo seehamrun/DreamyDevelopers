@@ -26,9 +26,9 @@ class DetailsHandler(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
         response2_html = jinja_env.get_template('templates/details.html')
-        charityName = self.request.get('charity')
+        ein = self.request.get('charity')
         data = {
-            'charityName': charityName
+            'ein': ein
         }
         self.response.write(response2_html.render(data))
 
