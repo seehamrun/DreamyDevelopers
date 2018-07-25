@@ -24,6 +24,13 @@
     <div>
       <h2 id="charity_cause">Charity Cause: <span id='cause'></span></h2>
     </div>
+    <form method="post">
+      <input type="hidden" id="charName" name="name">
+      <input type="hidden" id="charWebsite" name="website">
+      <input type="hidden" id="charDeductibility" name="deductibility">
+      <input type="hidden" name="charity" value="{{ein}}">
+      <button id="favorite" type="submit">Add to Favorites</button>
+    </form>
     <div id="info">
       <h3>Website: <a id='website' href=></a></h3>
       <h3>Phone Number: <span id='number'></span></h3>
@@ -34,12 +41,5 @@
       <h2>News: </h2>
       <div id="charityArticle"></div>
     </div>
-    <form method="post">
-      <input type="hidden" id="charName" name="name">
-      <input type="hidden" id="charWebsite" name="website">
-      <input type="hidden" id="charDeductibility" name="deductibility">
-      <input type="hidden" name="charity" value="{{ein}}">
-      <button id="favorite" type="submit">Add to Favorites</button>
-    </form>
   </body>
  </html>
