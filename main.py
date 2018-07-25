@@ -3,7 +3,7 @@ import logging
 import jinja2
 import os
 import database
-
+import time
 # import database
 
 from google.appengine.api import users
@@ -30,12 +30,33 @@ class DetailsHandler(webapp2.RequestHandler):
             'ein': ein
         }
         self.response.write(response2_html.render(data))
+        print("called")
+
+    def post(self):
+        name = self.request.get('name')
+        website = self.request.get('website')
+        deductibility = self.request.get('deductibility')
+        stored_charity = database.DatabaseFavs(name= name,
+            website= website, deductibility= deductibility)
+        stored_charity.put()
+        ein = self.request.get('charity')
+        data = {
+            'ein': ein
+        }
+        response_html = jinja_env.get_template('templates/details.html')
+        values = {
+            'charities': database.DatabaseFavs.query().fetch()
+        }
+        self.response.write(response_html.render(data))
+        print("call 2")
+
 
 class DonationHistoryHandler(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
         response_html = jinja_env.get_template('templates/history.html')
         # self.response.write(response_html.render())
+        time.sleep(2)
         data = {
             'donations': database.DatabaseHistory.query().fetch()
         }
@@ -48,11 +69,12 @@ class DonationHistoryHandler(webapp2.RequestHandler):
         stored_donation = database.DatabaseHistory(charityName=charityName,
             amountDonated= float(amountDonated), dateDonated=dateDonated)
         stored_donation.put()
-        response3_html = jinja_env.get_template('templates/history.html')
+        response_html = jinja_env.get_template('templates/history.html')
+        time.sleep(2)
         data = {
             'donations': database.DatabaseHistory.query().fetch()
         }
-        self.response.write(response3_html.render(data))
+        self.response.write(response_html.render(data))
 
 
 class FavCharityHandler(webapp2.RequestHandler):
@@ -104,5 +126,6 @@ app = webapp2.WSGIApplication([
     ('/details', DetailsHandler),
     ('/history', DonationHistoryHandler),
     ('/favorites', FavCharityHandler),
-    ('/aboutus', AboutUsHandler)
+    ('/aboutus', AboutUsHandler),
+    ('/delete_charity', DeleteCharityHandler)
 ], debug=True)

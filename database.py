@@ -7,5 +7,5 @@ class DatabaseHistory(ndb.Model):
 
 class DatabaseFavs(ndb.Model):
     name = ndb.StringProperty()
-    rating = ndb.IntegerProperty()
+    website = ndb.StringProperty()
     deductibility = ndb.StringProperty()

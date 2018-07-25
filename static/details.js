@@ -6,6 +6,8 @@ function charityDetails(ein, resultCallback) {
   jQuery.get(details_url, resultCallback)
 }
 
+var currentFavorite = null;
+
 function charityNews(charity, resultCallback) {
   var news_url = 'https://newsapi.org/v2/everything?'
           + 'q=' + charity
@@ -14,7 +16,6 @@ function charityNews(charity, resultCallback) {
           + '&apiKey=' + news_api_key
   jQuery.get(news_url, resultCallback)
 }
-
 
 charityDetails(einLookup, function(data) {
   var name = document.querySelector('#charityName')
@@ -33,6 +34,14 @@ charityDetails(einLookup, function(data) {
   address.innerHTML = mail.streetAddress1 + ', ' + mail.city + ', ' + mail.stateOrProvince + ' ' + mail.postalCode
   var cause = document.querySelector('#cause')
   cause.innerHTML = data.mission
+
+  var charName = document.querySelector('#charName')
+  charName.value = data.charityName
+  var charWebsite = document.querySelector('#charWebsite')
+  charWebsite.value = data.websiteURL
+  var charDeduct = document.querySelector('#charDeductibility')
+  charDeduct.value = data.irsClassification.deductibility
+
   charityNews(data.charityName, function(data) {
     var articles = data.articles
     var div = ""
@@ -46,3 +55,18 @@ charityDetails(einLookup, function(data) {
     charityArticle.innerHTML = div
   })
 })
+
+function addCharityToFavorites(currentFavorite, doneCallback) {
+  console.log("clicked too")
+}
+
+function addFavoriteClick() {
+  console.log("clicked")
+  addCharityToFavorites(currentFavorite, () => {
+    alert("Saved!")
+  })
+}
+
+window.addEventListener('load', () => {
+  document.querySelector('#favorite').addEventListener('click', addFavoriteClick)
+});
