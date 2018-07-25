@@ -120,9 +120,14 @@ class DeleteDonationHistoryHandler(webapp2.RequestHandler):
             "charity_id": the_charity.key.urlsafe()
         }
         self.response.write(response_html.render(data))
+
     def post(self):
         key = ndb.Key(urlsafe=self.request.get('charity_id'))
-        key.delete()
+        button = self.request.get("submit")
+        if button == 'Yes':
+            key.delete()
+            time.sleep(2)
+        self.redirect('/history')
 
 class DeleteFavoriteCharityHandler(webapp2.RequestHandler):
     def get(self):
@@ -139,7 +144,11 @@ class DeleteFavoriteCharityHandler(webapp2.RequestHandler):
 
     def post(self):
         key = ndb.Key(urlsafe=self.request.get("charity_id"))
-        key.delete()
+        button = self.request.get("submit")
+        if button == 'Yes':
+            key.delete()
+            time.sleep(2)
+        self.redirect('/favorites')
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get (self):
