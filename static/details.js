@@ -58,6 +58,7 @@ charityDetails(einLookup, function(data) {
 
 function addCharityToFavorites(currentFavorite, doneCallback) {
   console.log("clicked too")
+  alert('Added to your favorites!')
 }
 
 function addFavoriteClick() {
