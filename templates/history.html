@@ -2,6 +2,7 @@
   <head>
     <link rel="stylesheet" href="/static/styles/history.css">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto:300,700" rel="stylesheet">
+    <script src="/static/history.js"></script>
     <title>
       History
     </title>
@@ -17,7 +18,7 @@
     </ul>
   <h1> Donation History </h1>
   <p> Keep a record of all the charities you have donated to below.
-        <form method="post">
+        <form method="post" onsubmit="return validateForm()">
     <ul id="listOfInputs">
     <li id="firstInput">Charity: <input type="text" name="charityName"></li>
     <li class="inputs">Amount Donated: <input type="text" name="amountDonated" placeholder="Enter without currency"></li>
