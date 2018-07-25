@@ -6,9 +6,16 @@ function charityDetails(ein, resultCallback) {
   jQuery.get(details_url, resultCallback)
 }
 
+function charityNews(charity, resultCallback) {
+  var news_url = 'https://newsapi.org/v2/everything?'
+          + 'q=' + charity
+          + '&sortBy=relevancy'
+          + '&apiKey=' + news_api_key
+  jQuery.get(news_url, resultCallback)
+}
+
 
 charityDetails(einLookup, function(data) {
-  console.log(data)
   var name = document.querySelector('#charityName')
   name.innerHTML = data.charityName
   var deductibility = document.querySelector('#deductibility')
@@ -18,4 +25,17 @@ charityDetails(einLookup, function(data) {
   website.href = data.websiteURL
   var cause = document.querySelector('#cause')
   cause.innerHTML = data.mission
+  charityNews(data.charityName, function(data) {
+    console.log(data)
+    var articles = data.articles
+    var div = ""
+    for (var i = 0; i < articles.length; i++){
+      var resultTitle = "<h3>" + articles[i].title + "</h3>"
+      var resultDate = "<h5>" + articles[i].publishedAt.slice(0, 10) + "</h5>"
+      var resultDescription = "<p>" + articles[i].description + "</p>"
+      div = div + "<article>" + resultTitle + resultDate + resultDescription + "</article>"
+    }
+    var charityArticle = document.querySelector('#charityArticle')
+    charityArticle.innerHTML = div
+  })
 })
