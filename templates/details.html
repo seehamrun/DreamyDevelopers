@@ -16,31 +16,30 @@
       <li><a href="/favorites">My Favorites</a></li>
       <li><a href="/history">Donation History</a></li>
       <li><a href="/aboutus">About Us</a></li>
+      <li><a class="logout" href="{{logoutUrl}}">Log Out</a></li>
     </ul>
     <div id="name">
-      <h1>Charity Name: <span id='charityName'></span></h1>
-    </div>
-    <div id="website_ded">
-      <h3>Website: <a id='website' href=></a></h3>
-      <h3>Deductibility: <span id='deductibility'></span></h3>
+      <h1><span id='charityName'></span></h1>
     </div>
     <div>
       <h2 id="charity_cause">Charity Cause: <span id='cause'></span></h2>
+    </div>
+    <div id="info">
+      <h3>Website: <a id='website' href=></a></h3>
+      <h3>Phone Number: <span id='number'></span></h3>
+      <h3>Address: <span id='address'></span></h3>
+      <h3>Deductibility: <span id='deductibility'></span></h3>
     </div>
     <div id="news">
       <h2>News: </h2>
       <div id="charityArticle"></div>
     </div>
-    <button id="favorite" type="button">Add to Favorites</button>
-    <div id="social">
-      <h4>Social Media:</h4>
-    </div>
-
-    {% for charity in allCharities %}
-      <h1>{{charity.name}}</h1>
-      <h3 id="deductibility">{{charity.deductibility}}</h3>
-      <h2 id="charity_cause">{{charity.cause}}</h2>
-      <h3 id="news">{{charity.news}}</h3>
-    {% endfor %}
+    <form method="post">
+      <input type="hidden" id="charName" name="name">
+      <input type="hidden" id="charWebsite" name="website">
+      <input type="hidden" id="charDeductibility" name="deductibility">
+      <input type="hidden" name="charity" value="{{ein}}">
+      <button id="favorite" type="submit">Add to Favorites</button>
+    </form>
   </body>
  </html>

@@ -14,6 +14,7 @@
       <li><a href="/favorites">My Favorites</a></li>
       <li><a href="/history">Donation History</a></li>
       <li><a href="/aboutus">About Us</a></li>
+      <li><a class="logout" href="{{logoutUrl}}">Log Out</a></li>
     </ul>
     <h1>Favorite Charities</h1>
     <p> Your favorite charities appear here. </p>
@@ -26,9 +27,9 @@
       {% for charity in charities %}
         <tr>
           <td>{{charity.name}}</td>
-          <td>{{charity.rating}}</td>
+          <td>{{charity.website}}</td>
           <td>{{charity.deductibility}}</td>
-          <td><a href="/delete_charity?charity_id={{charity.key.urlsafe()}}">Delete</a></td>
+          <td><a href="/delete_charity?charity={{charity.key.urlsafe()}}">Delete</a></td>
         </tr>
       {% endfor %}
     </table>
