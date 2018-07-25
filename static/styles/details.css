@@ -142,7 +142,7 @@ li a.active {
     text-decoration: underline;
 }
 
-button {
+#favorite {
   margin-left: 50px;
   padding: 20px;
   margin-top: 20px;

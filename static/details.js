@@ -6,6 +6,7 @@ function charityDetails(ein, resultCallback) {
   jQuery.get(details_url, resultCallback)
 }
 
+var currentFavorite = null;
 
 charityDetails(einLookup, function(data) {
   console.log(data)
@@ -19,3 +20,17 @@ charityDetails(einLookup, function(data) {
   var cause = document.querySelector('#cause')
   cause.innerHTML = data.mission
 })
+
+function addCharityToFavorites(ein, doneCallback) {
+  jQuery.post("/favorites");
+}
+
+function addFavoriteClick() {
+  addCharityToFavorites(currentFavorite, () => {
+    alert("Saved!")
+  })
+}
+
+window.addEventListener('load', () => {
+  document.querySelector('#favorite').addEventListener('click', addFavoriteClick)
+});
