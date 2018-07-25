@@ -54,6 +54,7 @@ class DonationHistoryHandler(webapp2.RequestHandler):
         }
         self.response.write(response_html.render(data))
 
+
 class FavCharityHandler(webapp2.RequestHandler):
     def get (self):
         self.response.headers['Content-Type'] = 'text/html'

@@ -32,18 +32,6 @@ function submitClick() {
 }
 
 
-function charityNews(charity, resultCallback) {
-  var news_url = 'https://newsapi.org/v2/everything?'
-          + 'q=' + charity
-          + '&sortBy=relevancy'
-          + '&apiKey=' + news_api_key
-  jQuery.get(news_url, resultCallback)
-}
-
-charityNews('Second Harvest Heartland', function(data) {
-
-})
-
 window.addEventListener('load', () => {
   document.querySelector('#submit').addEventListener("click", submitClick)
 });
