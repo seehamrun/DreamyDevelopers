@@ -126,13 +126,13 @@ class DeleteDonationHistoryHandler(webapp2.RequestHandler):
 
 class DeleteFavoriteCharityHandler(webapp2.RequestHandler):
     def get(self):
-        charity_to_delete = self.request.get('charity_id')
+        charity_to_delete = self.request.get('charity')
         response_html= jinja_env.get_template('templates/are_you_sure_favs.html')
         key = ndb.Key(urlsafe=charity_to_delete)
         the_charity = key.get()
         time.sleep(2)
         data = {
-            "charity": the_charity.charityName,
+            "charity": the_charity.name,
             "charity_id": the_charity.key.urlsafe()
         }
         self.response.write(response_html.render(data))
