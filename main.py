@@ -42,11 +42,14 @@ class DetailsHandler(webapp2.RequestHandler):
         print("called")
 
     def post(self):
+        user = users.get_current_user()
+        logging.info('current user is %s' % (user.nickname()))
         name = self.request.get('name')
         website = self.request.get('website')
         deductibility = self.request.get('deductibility')
+        logging.info('server saw a request to add %s, %s, and %s to list of favorites' % (name, website, deductibility))
         stored_charity = database.DatabaseFavs(name= name,
-            website= website, deductibility= deductibility)
+            website= website, deductibility= deductibility, username= user.nickname())
         stored_charity.put()
         ein = self.request.get('charity')
         data = {
@@ -54,7 +57,7 @@ class DetailsHandler(webapp2.RequestHandler):
         }
         response_html = jinja_env.get_template('templates/details.html')
         values = {
-            'charities': database.DatabaseFavs.query().fetch()
+            'charities': database.DatabaseFavs.query(database.DatabaseFavs.username == user.nickname()).fetch()
         }
         self.response.write(response_html.render(data))
         print("call 2")
@@ -69,23 +72,26 @@ class DonationHistoryHandler(webapp2.RequestHandler):
         # self.response.write(response_html.render())
         time.sleep(2)
         data = {
-            'donations': database.DatabaseHistory.query().fetch(),
+            'donations': database.DatabaseHistory.query(database.DatabaseHistory.username == user.nickname()).fetch(),
             'user_nickname': user.nickname(),
             'logoutUrl': users.create_logout_url('/')
         }
         self.response.write(response_html.render(data))
 
     def post(self):
+        user = users.get_current_user()
+        logging.info('current user is %s' % (user.nickname()))
         charityName = self.request.get('charityName')
         amountDonated = self.request.get('amountDonated')
         dateDonated = self.request.get('dateDonated')
+        logging.info('server saw a request to add %s, %s, and %s to donation history' % (charityName, amountDonated, dateDonated))
         stored_donation = database.DatabaseHistory(charityName=charityName,
-            amountDonated= float(amountDonated), dateDonated=dateDonated)
+            amountDonated= float(amountDonated), dateDonated=dateDonated, username= user.nickname())
         stored_donation.put()
         response_html = jinja_env.get_template('templates/history.html')
         time.sleep(2)
         data = {
-            'donations': database.DatabaseHistory.query().fetch()
+            'donations': database.DatabaseHistory.query(database.DatabaseHistory.username == user.nickname()).fetch()
         }
         self.response.write(response_html.render(data))
 
@@ -97,7 +103,7 @@ class FavCharityHandler(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         response_html = jinja_env.get_template('templates/favorites.html')
         values = {
-            "charities": database.DatabaseFavs.query().fetch(),
+            "charities": database.DatabaseFavs.query(database.DatabaseFavs.username == user.nickname()).fetch(),
             'user_nickname': user.nickname(),
             'logoutUrl': users.create_logout_url('/')
         }
