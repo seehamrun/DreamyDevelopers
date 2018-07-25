@@ -3,7 +3,7 @@ import logging
 import jinja2
 import os
 import database
-
+import time
 # import database
 
 from google.appengine.api import users
@@ -36,6 +36,7 @@ class DonationHistoryHandler(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         response_html = jinja_env.get_template('templates/history.html')
         # self.response.write(response_html.render())
+        time.sleep(2)
         data = {
             'donations': database.DatabaseHistory.query().fetch()
         }
@@ -49,6 +50,7 @@ class DonationHistoryHandler(webapp2.RequestHandler):
             amountDonated= float(amountDonated), dateDonated=dateDonated)
         stored_donation.put()
         response_html = jinja_env.get_template('templates/history.html')
+        time.sleep(2)
         data = {
             'donations': database.DatabaseHistory.query().fetch()
         }
