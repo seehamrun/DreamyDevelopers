@@ -4,7 +4,6 @@ import jinja2
 import os
 import database
 import time
-# import database
 
 from google.appengine.api import users
 from google.appengine.ext import ndb
@@ -17,17 +16,27 @@ jinja_env = jinja2.Environment(
 
 class MainPageHandler(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
+        logging.info('current user is %s' % (user.nickname()))
         self.response.headers['Content-Type'] = 'text/html'
         response_html = jinja_env.get_template('templates/search.html')
-        self.response.write(response_html.render())
+        data = {
+          'user_nickname': user.nickname(),
+          'logoutUrl': users.create_logout_url('/')
+        }
+        self.response.write(response_html.render(data))
 
 class DetailsHandler(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
+        logging.info('current user is %s' % (user.nickname()))
         self.response.headers['Content-Type'] = 'text/html'
         response2_html = jinja_env.get_template('templates/details.html')
         ein = self.request.get('charity')
         data = {
-            'ein': ein
+            'ein': ein,
+            'user_nickname': user.nickname(),
+            'logoutUrl': users.create_logout_url('/')
         }
         self.response.write(response2_html.render(data))
         print("called")
@@ -53,12 +62,16 @@ class DetailsHandler(webapp2.RequestHandler):
 
 class DonationHistoryHandler(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
+        logging.info('current user is %s' % (user.nickname()))
         self.response.headers['Content-Type'] = 'text/html'
         response_html = jinja_env.get_template('templates/history.html')
         # self.response.write(response_html.render())
         time.sleep(2)
         data = {
-            'donations': database.DatabaseHistory.query().fetch()
+            'donations': database.DatabaseHistory.query().fetch(),
+            'user_nickname': user.nickname(),
+            'logoutUrl': users.create_logout_url('/')
         }
         self.response.write(response_html.render(data))
 
@@ -79,10 +92,14 @@ class DonationHistoryHandler(webapp2.RequestHandler):
 
 class FavCharityHandler(webapp2.RequestHandler):
     def get (self):
+        user = users.get_current_user()
+        logging.info('current user is %s' % (user.nickname()))
         self.response.headers['Content-Type'] = 'text/html'
         response_html = jinja_env.get_template('templates/favorites.html')
         values = {
-            "charities": database.DatabaseFavs.query().fetch()
+            "charities": database.DatabaseFavs.query().fetch(),
+            'user_nickname': user.nickname(),
+            'logoutUrl': users.create_logout_url('/')
         }
         self.response.write(response_html.render(values))
 
@@ -97,15 +114,22 @@ class DeleteCharityHandler(webapp2.RequestHandler):
             "charity_id": the_charity.key.urlsafe()
         }
         self.response.write(response_html.render(data))
+
     def post(self):
         key = ndb.Key(urlsafe=self.request.get('charity_id'))
         key.delete()
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get (self):
+        user = users.get_current_user()
+        logging.info('current user is %s' % (user.nickname()))
         self.response.headers['Content-Type'] = 'text/html'
         response_html = jinja_env.get_template('templates/aboutus.html')
-        self.response.write(response_html.render())
+        data = {
+          'user_nickname': user.nickname(),
+          'logoutUrl': users.create_logout_url('/')
+        }
+        self.response.write(response_html.render(data))
 
 # class SearchHandler(webapp2.RequestHandler):
 #     def get (self):
