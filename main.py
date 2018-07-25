@@ -30,6 +30,26 @@ class DetailsHandler(webapp2.RequestHandler):
             'ein': ein
         }
         self.response.write(response2_html.render(data))
+        print("called")
+
+    def post(self):
+        name = self.request.get('name')
+        website = self.request.get('website')
+        deductibility = self.request.get('deductibility')
+        stored_charity = database.DatabaseFavs(name= name,
+            website= website, deductibility= deductibility)
+        stored_charity.put()
+        ein = self.request.get('charity')
+        data = {
+            'ein': ein
+        }
+        response_html = jinja_env.get_template('templates/details.html')
+        values = {
+            'charities': database.DatabaseFavs.query().fetch()
+        }
+        self.response.write(response_html.render(data))
+        print("call 2")
+
 
 class DonationHistoryHandler(webapp2.RequestHandler):
     def get(self):
@@ -65,19 +85,6 @@ class FavCharityHandler(webapp2.RequestHandler):
             "charities": database.DatabaseFavs.query().fetch()
         }
         self.response.write(response_html.render(values))
-
-    def post(self):
-        name = self.request.get('charityN')
-        website = self.request.get('charityWebsite')
-        deductibility = self.request.get('charityDeduct')
-        stored_charity = database.DatabaseFavs(name= name,
-            website= website, deductibility= deductibility)
-        stored_charity.put()
-        response_html = jinja_env.get_template('templates/favorites.html')
-        values = {
-            'charities': database.DatabaseFavs.query().fetch()
-        }
-        self.response.write(response_html.render(data))
 
 class DeleteCharityHandler(webapp2.RequestHandler):
     def get(self):

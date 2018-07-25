@@ -26,6 +26,14 @@ charityDetails(einLookup, function(data) {
   website.href = data.websiteURL
   var cause = document.querySelector('#cause')
   cause.innerHTML = data.mission
+
+  var charName = document.querySelector('#charName')
+  charName.value = data.charityName
+  var charWebsite = document.querySelector('#charWebsite')
+  charWebsite.value = data.websiteURL
+  var charDeduct = document.querySelector('#charDeductibility')
+  charDeduct.value = data.irsClassification.deductibility
+
   charityNews(data.charityName, function(data) {
     console.log(data)
     var articles = data.articles
@@ -43,7 +51,6 @@ charityDetails(einLookup, function(data) {
 
 function addCharityToFavorites(currentFavorite, doneCallback) {
   console.log("clicked too")
-  jQuery.post("/favorites");
 }
 
 function addFavoriteClick() {

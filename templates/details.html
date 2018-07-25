@@ -31,16 +31,15 @@
       <h2>News: </h2>
       <div id="charityArticle"></div>
     </div>
-    <button id="favorite" type="button">Add to Favorites</button>
+    <form method="post">
+      <input type="hidden" id="charName" name="name">
+      <input type="hidden" id="charWebsite" name="website">
+      <input type="hidden" id="charDeductibility" name="deductibility">
+      <input type="hidden" name="charity" value="{{ein}}">
+      <button id="favorite" type="submit">Add to Favorites</button>
+    </form>
     <div id="social">
       <h4>Social Media:</h4>
     </div>
-
-    {% for charity in allCharities %}
-      <h1>{{charity.name}}</h1>
-      <h3 id="deductibility">{{charity.deductibility}}</h3>
-      <h2 id="charity_cause">{{charity.cause}}</h2>
-      <h3 id="news">{{charity.news}}</h3>
-    {% endfor %}
   </body>
  </html>
