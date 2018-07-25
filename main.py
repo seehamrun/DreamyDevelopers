@@ -88,18 +88,24 @@ class FavCharityHandler(webapp2.RequestHandler):
 
 class DeleteCharityHandler(webapp2.RequestHandler):
     def get(self):
+        print("get 1")
         charity_to_delete = self.request.get('charity_id')
         response_html= jinja_env.get_template('templates/favorites.html')
         key = ndb.Key(urlsafe=charity_to_delete)
         the_charity = key.get()
+        print("get 2")
         data = {
-            "charityName": the_charity.name,
+            "charity": the_charity.name,
             "charity_id": the_charity.key.urlsafe()
         }
         self.response.write(response_html.render(data))
+        print("get 3")
+
     def post(self):
+        print("get 4")
         key = ndb.Key(urlsafe=self.request.get('charity_id'))
         key.delete()
+        print("get 5")
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get (self):
