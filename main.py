@@ -173,6 +173,6 @@ app = webapp2.WSGIApplication([
     ('/history', DonationHistoryHandler),
     ('/favorites', FavCharityHandler),
     ('/aboutus', AboutUsHandler),
-    ('/delete', DeleteDonationHistoryHandler)
+    ('/delete', DeleteDonationHistoryHandler),
     ('/delete_charity', DeleteFavoriteCharityHandler)
 ], debug=True)
