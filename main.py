@@ -49,12 +49,12 @@ class DonationHistoryHandler(webapp2.RequestHandler):
         stored_donation = database.DatabaseHistory(charityName=charityName,
             amountDonated= float(amountDonated), dateDonated=dateDonated)
         stored_donation.put()
-        response3_html = jinja_env.get_template('templates/history.html')
+        response_html = jinja_env.get_template('templates/history.html')
         time.sleep(2)
         data = {
             'donations': database.DatabaseHistory.query().fetch()
         }
-        self.response.write(response3_html.render(data))
+        self.response.write(response_html.render(data))
 
 
 class FavCharityHandler(webapp2.RequestHandler):
@@ -65,6 +65,19 @@ class FavCharityHandler(webapp2.RequestHandler):
             "charities": database.DatabaseFavs.query().fetch()
         }
         self.response.write(response_html.render(values))
+
+    def post(self):
+        name = self.request.get('charityN')
+        website = self.request.get('charityWebsite')
+        deductibility = self.request.get('charityDeduct')
+        stored_charity = database.DatabaseFavs(name= name,
+            website= website, deductibility= deductibility)
+        stored_charity.put()
+        response_html = jinja_env.get_template('templates/favorites.html')
+        values = {
+            'charities': database.DatabaseFavs.query().fetch()
+        }
+        self.response.write(response_html.render(data))
 
 class DeleteCharityHandler(webapp2.RequestHandler):
     def get(self):
