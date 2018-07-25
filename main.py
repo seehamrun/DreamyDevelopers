@@ -132,7 +132,7 @@ class DeleteFavoriteCharityHandler(webapp2.RequestHandler):
         the_charity = key.get()
         time.sleep(2)
         data = {
-            "charity": the_charity.charityName,
+            "charity": the_charity.name,
             "charity_id": the_charity.key.urlsafe()
         }
         self.response.write(response_html.render(data))
