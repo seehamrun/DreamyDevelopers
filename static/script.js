@@ -6,7 +6,6 @@ function queryCharity(query, resultCallback) {
   jQuery.get(charity_url, resultCallback)
 }
 
-
 function submitClick() {
   var loader = document.querySelector('#loader')
   loader.style.display = 'block'

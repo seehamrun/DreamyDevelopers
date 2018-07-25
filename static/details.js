@@ -6,9 +6,8 @@ function charityDetails(ein, resultCallback) {
   jQuery.get(details_url, resultCallback)
 }
 
-<<<<<<< HEAD
 var currentFavorite = null;
-=======
+
 function charityNews(charity, resultCallback) {
   var news_url = 'https://newsapi.org/v2/everything?'
           + 'q=' + charity
@@ -16,8 +15,6 @@ function charityNews(charity, resultCallback) {
           + '&apiKey=' + news_api_key
   jQuery.get(news_url, resultCallback)
 }
-
->>>>>>> 4c74b4485336aa94a0f6d3db5ab3089b8100b910
 
 charityDetails(einLookup, function(data) {
   var name = document.querySelector('#charityName')
@@ -44,11 +41,13 @@ charityDetails(einLookup, function(data) {
   })
 })
 
-function addCharityToFavorites(ein, doneCallback) {
+function addCharityToFavorites(currentFavorite, doneCallback) {
+  console.log("clicked too")
   jQuery.post("/favorites");
 }
 
 function addFavoriteClick() {
+  console.log("clicked")
   addCharityToFavorites(currentFavorite, () => {
     alert("Saved!")
   })
