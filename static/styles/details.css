@@ -147,3 +147,6 @@ li a.active {
   font-family: 'Roboto', sans-serif;
   font-weight: 200;
 }
+
+#favorite:hover {
+    background-color: #ffb200;
