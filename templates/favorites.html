@@ -26,9 +26,9 @@
       {% for charity in charities %}
         <tr>
           <td>{{charity.name}}</td>
-          <td>{{charity.rating}}</td>
+          <td>{{charity.website}}</td>
           <td>{{charity.deductibility}}</td>
-          <td><a href="/delete_charity?charity_id={{charity.key.urlsafe()}}">Delete</a></td>
+          <td><a href="/delete_charity?charity={{charity.key.urlsafe()}}">Delete</a></td>
         </tr>
       {% endfor %}
     </table>
