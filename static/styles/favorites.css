@@ -44,3 +44,17 @@ table {
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  color:  #ffce00;
+  /* color: #a5f0ff; */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+p {
+  color: #07deff;
+}
