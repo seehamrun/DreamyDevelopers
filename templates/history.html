@@ -35,6 +35,7 @@
             <td>{{donation.charityName}}</td>
             <td>{{donation.amountDonated}}</td>
             <td>{{donation.dateDonated}}</td>
+            <td><a href="/delete?charity_id={{donation.key.urlsafe()}}">Delete</a></td>
           </tr>
           {% endfor %}
         </table>

@@ -82,16 +82,33 @@ class FavCharityHandler(webapp2.RequestHandler):
 class DeleteCharityHandler(webapp2.RequestHandler):
     def get(self):
         charity_to_delete = self.request.get('charity_id')
-        response_html= jinja_env.get_template('templates/favorites.html')
+        response_html= jinja_env.get_template('templates/you_sure.html')
         key = ndb.Key(urlsafe=charity_to_delete)
         the_charity = key.get()
         data = {
-            "charityName": the_charity.name,
+            "charityName": the_charity.charityName,
             "charity_id": the_charity.key.urlsafe()
         }
         self.response.write(response_html.render(data))
     def post(self):
         key = ndb.Key(urlsafe=self.request.get('charity_id'))
+        key.delete()
+
+class DeleteFavoriteCharityHandler(webapp2.RequestHandler):
+    def get(self):
+        charity_to_delete = self.request.get('charity_id')
+        response_html= jinja_env.get_template('templates/favorites.html')
+        key = ndb.Key(urlsafe=charity_to_delete)
+        the_charity = key.get()
+        time.sleep(2)
+        data = {
+            "charityName": the_charity.charityName,
+            "charity_id": the_charity.key.urlsafe()
+        }
+        self.response.write(response_html.render(data))
+    def post(self):
+        key = ndb.Key(urlsafe=self.request.get('charity_id'))
+        time.sleep(2)
         key.delete()
 
 class AboutUsHandler(webapp2.RequestHandler):
@@ -119,5 +136,6 @@ app = webapp2.WSGIApplication([
     ('/details', DetailsHandler),
     ('/history', DonationHistoryHandler),
     ('/favorites', FavCharityHandler),
-    ('/aboutus', AboutUsHandler)
+    ('/aboutus', AboutUsHandler),
+    ('/delete', DeleteCharityHandler)
 ], debug=True)
