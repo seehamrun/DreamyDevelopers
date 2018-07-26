@@ -60,12 +60,13 @@ h1 {
 
 p {
   color: #07deff;
-  font-size: 30;
+  font-size: 23px;
+  font-weight: bold;
 }
 
 .button {
   display: block;
-  background: #ffce00;
+  background: #ffaa00;
   padding: 5px;
   text-align: center;
   color: white;
