@@ -71,3 +71,8 @@ p {
   color: white;
   text-transform: uppercase;
 }
+
+.button:hover {
+  background-color: #ffb200;
+  color: white;
+}

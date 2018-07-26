@@ -54,8 +54,8 @@ th, td {
 }
 
 #submitButton:hover {
-    background-color: #07deff;
-    color: #fff;
+    background-color: #ffb200;
+    color: white;
 }
 
 #topRow {
@@ -136,4 +136,9 @@ input {
   text-align: center;
   color: white;
   text-transform: uppercase;
+}
+
+#button:hover {
+  background-color: #ffb200;
+  color: white;
 }
