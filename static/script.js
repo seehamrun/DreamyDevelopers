@@ -18,6 +18,8 @@ function submitClick() {
   var inputBox = document.querySelector('#queryBox')
   var resultPane = document.querySelector('#resultPane')
   resultPane.style.display = 'none'
+  var errorPane = document.querySelector('#errorPane')
+  errorPane.style.display = 'none'
   var userInput = inputBox.value
   if (userInput == '') {
     loader.style.display = 'none'
@@ -39,14 +41,15 @@ function submitClick() {
     resultPane.style.display = 'block'
   },
   function(err){
-    loader.style.display = 'none'
-    var div = ''
-    var sorry = "<h1>Whoops! There were no charities that matched your search. Please try something else.</h1>"
+    console.log('whoops')
+    // var div = ''
+    var sorry = "<h1 style='text-align:center'>Whoops! There were no charities that matched your search. Please try something else.</h1>"
     var cat = "<img src='http://www.catnanny.ca/wp-content/themes/responsive/images/feature_cat.png'/>"
-    div = "<div>" + sorry + cat + "</div>"
+    var div = "<div>" + sorry + cat + "</div>"
     var errorDiv = document.querySelector('#error')
     errorDiv.innerHTML = div
-    resultPane.style.display = 'block'
+    loader.style.display = 'none'
+    errorPane.style.display = 'block'
   })
 }
 
