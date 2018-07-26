@@ -30,7 +30,7 @@
           <td>{{charity.name}}</td>
           <td>{{charity.website}}</td>
           <td>{{charity.deductibility}}</td>
-          <td><a href="/delete_charity?charity={{charity.key.urlsafe()}}">Delete</a></td>
+          <td><a href="/delete_charity?charity={{charity.key.urlsafe()}}" class="button">Delete</a></td>
         </tr>
       {% endfor %}
     </table>
