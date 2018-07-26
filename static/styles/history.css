@@ -93,7 +93,8 @@ h1 {
 
 p {
   color: #07deff;
-  font-size: 30;
+  font-size: 23px;
+  font-weight: bold;
 }
 
 td {
