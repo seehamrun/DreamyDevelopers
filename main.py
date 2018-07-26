@@ -112,7 +112,7 @@ class FavCharityHandler(webapp2.RequestHandler):
 class DeleteDonationHistoryHandler(webapp2.RequestHandler):
     def get(self):
         charity_to_delete = self.request.get('charity_id')
-        response_html= jinja_env.get_template('templates/you_sure.html')
+        response_html= jinja_env.get_template('templates/delete_history.html')
         key = ndb.Key(urlsafe=charity_to_delete)
         the_charity = key.get()
         data = {
@@ -132,7 +132,7 @@ class DeleteDonationHistoryHandler(webapp2.RequestHandler):
 class DeleteFavoriteCharityHandler(webapp2.RequestHandler):
     def get(self):
         charity_to_delete = self.request.get('charity')
-        response_html= jinja_env.get_template('templates/are_you_sure_favs.html')
+        response_html= jinja_env.get_template('templates/delete_favs.html')
         key = ndb.Key(urlsafe=charity_to_delete)
         the_charity = key.get()
         time.sleep(2)
