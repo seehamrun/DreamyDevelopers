@@ -13,24 +13,35 @@ function submitClick() {
   var resultPane = document.querySelector('#resultPane')
   resultPane.style.display = 'none'
   var userInput = inputBox.value
-  queryCharity(userInput, function(data) {
-    var div = ""
-    for (var i = 0; i < data.length; i++){
-      var name = data[i].charityName
-      var resultName = "<h1><a href='/details?charity=" + data[i].ein + "'>" + name + "</a></h1>"
-      var resultMission = "<p>" + data[i].mission + "</p>"
-      var resultClassification = "<p>" + data[i].irsClassification.deductibility + "</p>"
-      div = div + "<div>" + resultName + resultMission + resultClassification + "</div>"
-    }
-
-    var resultDiv = document.querySelector('#result')
-    resultDiv.innerHTML = div
+  if (userInput == '') {
     loader.style.display = 'none'
     resultPane.style.display = 'block'
-  })
+    return
+  }
+  else if (userInput != '') {
+    queryCharity(userInput, function(data) {
+      var div = ""
+      for (var i = 0; i < data.length; i++){
+        var name = data[i].charityName
+        var resultName = "<h1><a href='/details?charity=" + data[i].ein + "'>" + name + "</a></h1>"
+        var resultMission = "<p>" + data[i].mission + "</p>"
+        var resultClassification = "<p>" + data[i].irsClassification.deductibility + "</p>"
+        div = div + "<div>" + resultName + resultMission + resultClassification + "</div>"
+      }
+      var resultDiv = document.querySelector('#result')
+      resultDiv.innerHTML = div
+      loader.style.display = 'none'
+      resultPane.style.display = 'block'
+    })
+  }
 }
-
 
 window.addEventListener('load', () => {
   document.querySelector('#submit').addEventListener("click", submitClick)
+  document.querySelector('#queryBox').addEventListener('keypress', function (e) {
+    var key = e.which || e.keyCode
+    if (e.keyCode === 13) {
+      submitClick()
+    }
+  });
 });
