@@ -76,13 +76,10 @@ input {
 body {
   font-family: 'Roboto', sans-serif;
 }
-<<<<<<< HEAD
-=======
 
 #logoSpace {
-  height:150px;
-  width:auto;
+  height: 150px;
+  width: auto;
   background-color: white;
-  margin-top:50px;
+  margin-top: 50px;
 }
->>>>>>> 3d2c135a949757e8f58f5bf23a576d470662c47a
