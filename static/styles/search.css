@@ -1,9 +1,11 @@
 #searchBar {
-  position: absolute;
+  /* position: absolute; */
   top: 16%;
   left: 17%;
-  margin-top: -50px;
-  margin-left: -190px;
+  /* margin-top: -50px;
+  margin-left: -190px; */
+  margin-left: 32%;
+  margin-top: 20px;
 }
 
 button {
@@ -41,16 +43,18 @@ input {
 }
 
 #result {
-  position: absolute;
+  /* position: absolute; */
   top: 16%;
   left: 3%;
   right: 3%;
+  margin-left:3%;
+  margin-right:3%;
 }
 
 #loader {
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 47%;
   border: 16px solid #f3f3f3;
   border-top: 16px solid blue;
   border-radius: 50%;
@@ -72,3 +76,13 @@ input {
 body {
   font-family: 'Roboto', sans-serif;
 }
+<<<<<<< HEAD
+=======
+
+#logoSpace {
+  height:150px;
+  width:auto;
+  background-color: white;
+  margin-top:50px;
+}
+>>>>>>> 3d2c135a949757e8f58f5bf23a576d470662c47a

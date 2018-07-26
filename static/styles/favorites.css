@@ -30,14 +30,17 @@ li a.active {
 
 th, td {
     border-bottom: 1px solid #ddd;
+    font-size: 20;
 }
 
 #firstRow {
   font-weight: bold;
+  text-transform: uppercase;
+  color: gray;
 }
 
 table {
-  width:50%;
+  width:100%;
   margin-top: 20px;
 }
 
@@ -46,9 +49,9 @@ body {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 60px;
   text-align: center;
-  color:  #ffce00;
+  color: #ffce00;
   /* color: #a5f0ff; */
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
@@ -57,4 +60,14 @@ h1 {
 
 p {
   color: #07deff;
+  font-size: 30;
+}
+
+.button {
+  display: block;
+  background: #ffce00;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
 }
