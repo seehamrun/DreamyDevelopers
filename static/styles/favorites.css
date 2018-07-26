@@ -74,6 +74,6 @@ p {
 }
 
 .button:hover {
-    background-color: #4CAF50;
-    color: white;
+  background-color: #ffb200;
+  color: white;
 }

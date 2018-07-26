@@ -19,10 +19,13 @@ h2 {
   align-content: center; */
 }
 
+p {
+  font-size: 20;
+}
+
 body {
  font-family: 'Roboto', sans-serif;
  font-weight: 200;
- font-size: 20;
  color: gray;
 }
 
