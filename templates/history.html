@@ -16,30 +16,30 @@
       <li><a href="/aboutus">About Us</a></li>
       <li><a class="logout" href="{{logoutUrl}}">Log Out</a></li>
     </ul>
-  <h1> Donation History </h1>
-  <p> Keep a record of all the charities you have donated to below.
-        <form method="post" onsubmit="return validateForm()">
-    <ul id="listOfInputs">
-    <li id="firstInput">Charity: <input type="text" name="charityName" placeholder="Enter name here"></li>
-    <li class="inputs">Amount Donated: <input type="number" step='.01' min='.01' name="amountDonated" placeholder="Enter without currency"></li>
-    <li class="inputs">Date of Donation: <input type="date" name="dateDonated"></li>
-    <input class="inputs" id="submitButton" type="submit">
-  </ul>
-        </form>
-        <table>
-          <tr id="topRow">
-            <td>Charity</td>
-            <td>Amount Donated</td>
-            <td>Date of Donation</td>
-          </tr>
-          {% for donation in donations %}
-          <tr>
-            <td>{{donation.charityName}}</td>
-            <td>${{donation.amountDonated}}</td>
-            <td>{{donation.dateDonated}}</td>
-            <td><a href="/delete?charity_id={{donation.key.urlsafe()}}">Delete</a></td>
-          </tr>
-          {% endfor %}
-        </table>
+    <h1> Donation History </h1>
+    <p> Keep a record of all the charities you have donated to below.</p>
+    <form method="post" onsubmit="return validateForm()">
+      <ul id="listOfInputs">
+        <li id="firstInput" class="headers">Charity: <input type="text" name="charityName" placeholder="Enter name here"></li>
+        <li class="inputs, headers">Amount Donated: <input type="number" step='.01' min='.01' name="amountDonated" placeholder="Enter without currency"></li>
+        <li id="date" class="inputs, headers">Date of Donation: <input type="date" name="dateDonated"></li>
+        <input class="inputs" id="submitButton" type="submit">
+      </ul>
+    </form>
+    <table>
+      <tr id="topRow">
+        <td>Charity</td>
+        <td>Amount Donated</td>
+        <td>Date of Donation</td>
+      </tr>
+      {% for donation in donations %}
+        <tr>
+          <td>{{donation.charityName}}</td>
+          <td>${{donation.amountDonated}}</td>
+          <td>{{donation.dateDonated}}</td>
+          <td><a href="/delete?charity_id={{donation.key.urlsafe()}}" id="button">Delete</a></td>
+        </tr>
+        {% endfor %}
+      </table>
   </body>
 </html>

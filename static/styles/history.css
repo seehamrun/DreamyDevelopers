@@ -30,29 +30,38 @@ li a.active {
 
 th, td {
     border-bottom: 1px solid #ddd;
+    font-size: 20;
 }
 
 #submitButton {
-  width: 100px;
-  height:20px;
-  background-color: green;
-  border: none;
+  display: block;
+  background-color: #ffce00;
   color: white;
+  text-transform: uppercase;
+  width: 100px;
+  height:30px;
+  border: none;
   /* padding: 11px 20px; */
   text-align: center;
   display: inline-block;
   font-size: 16px;
   transition-duration: 0.4s;
   cursor: pointer;
+  margin-left: 10px;
+  margin-top: 10px;
+  /* padding-top: 5px;
+  padding-bottom: 5px; */
 }
 
 #submitButton:hover {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #07deff;
+    color: #fff;
 }
 
 #topRow {
   font-weight: bold;
+  text-transform: uppercase;
+  color: gray;
 }
 
 #firstInput {
@@ -72,14 +81,59 @@ th, td {
   margin-left: 20px;
 }
 
+h1 {
+  font-size: 60px;
+  text-align: center;
+  color: #ffce00;
+  /* color: #a5f0ff; */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+p {
+  color: #07deff;
+  font-size: 30;
+}
+
 td {
   width: 20%;
 }
 
 table {
-  margin-left: 10px;
+  /* margin-left: 10px; */
+  width:100%;
+  margin-top: 20px;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+.headers {
+  font-size: 20;
+  margin-left: 5px;
+  color: gray;
+  margin-top: 7px;
+  margin-bottom: 5px;
+}
+
+input {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-top: 0px;
+}
+
+#date {
+  margin-bottom: 15px;
+  margin-top: 7px;
+}
+
+#button {
+  display: block;
+  background: #ffce00;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
 }
