@@ -7,7 +7,7 @@ function queryCharity(query, resultCallback) {
 }
 
 function submitClick() {
-  var loader = document.querySelector('#loader')
+  var loader = document.querySelector('.sk-cube-grid')
   loader.style.display = 'block'
   var inputBox = document.querySelector('#queryBox')
   var resultPane = document.querySelector('#resultPane')
